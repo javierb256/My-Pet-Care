@@ -2,7 +2,7 @@
 
 My pet care is an online website where pet owners can keep track of their pets in various ways. Pet owners can sometimes be overwhelmed by the various responsibilities that come with owning a pet such as keeping track of different medications, watching their pet's weight, and being aware of any upcoming vet visits. My Pet Care is an online webpage who's goal is helping pet owners take care of their pet family members.
 
-<!-- ## Table of contents -->
+## Table of contents
 
 <!-- - [Overview](#overview)
   - [The challenge](#the-challenge)
@@ -16,7 +16,10 @@ My pet care is an online website where pet owners can keep track of their pets i
 - [Author](#author)
 - [Acknowledgments](#acknowledgments) -->
 
-
+- [Overview](#overview)
+- [My process](#my-process)
+  - [User Stores](#user-stories)
+  - [Built with](#built-with)
 <!-- ## Overview -->
 
 <!-- ### The challenge
@@ -46,10 +49,34 @@ Wireframe URL: [https://www.figma.com/design/RKJGqdDEe6wqZ7r4B7j4dX/My-Pet-Care-
 <!-- - Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com) -->
 
-<!-- ## My process -->
+## My process
 
-<!-- ### Built with -->
+### User Stories
+User stories help the developer see what kinds of features users find most useful and be able to use as a roadmap when planning on what to work on next.
 
+#### John
+John –  Is a dog owner who works a 9-5 job at a local grocery store and sometimes has to do overtime leaving him little time to care for his pet. He wants to use a platform that is easily accesible wherever he is and be able to hold his pet's important information that he can view at any time.
+
+- As John I want to be able to create an account so that I can use the service
+-	As John I want to be able to recover my account if I forgot my password so that I can login back to my account
+-	As John I want to be able to use a photo of my dog on the website so I can see that it is them
+-	As John I want to be able to write my pets basic information down and see right away to be aware of certain aspects of my dog.
+-	As John I want to see any upcoming appointments on the home screen right away so that I wont miss any upcoming appointments.
+-	As John I want to keep track of my dogs weight and see a visual of any changes on the home screen to see if I need to make any adjustments to my pets diet.
+-	As John I want to see a calendar of the current month that highlights any appointments or reminders on the home screen 
+-	As John I want to have a page where I can see all current appointments all lined up at once
+-	As John I want to be able to add new appointments on the same page
+-	As John I want to be able to delete any old appointment that I do not need any more
+-	As John I want to be able to filter the appointments by upcoming first
+-	As John I want a page where I can keep track of my dog’s medical health to keep track of any sickness or medical history
+-	As John I want to be able to add to my pets medical history
+
+
+### Built with
+- Semantic HTML5 markup
+- CSS custom properties
+- JavaScript
+- [React](https://reactjs.org/) - JS library
 <!-- - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
