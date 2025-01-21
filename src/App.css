@@ -1,37 +1,50 @@
+@media screen and (min-width: 992px){
+  header {
+    background-color: var(--blue-background);
+    color: white;
+    gap: 15px;
+    padding-bottom: 1rem;
+  }
+  
+  header h1 {
+    font-family: sourGummyRegular;
+    font-size: 3rem;
+  }
+  
+  .home-logo {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    /* padding-top: 3rem; */
+    padding: 2.5rem 0;
+    border-radius: 50%;
+    background-color: white;
+    margin-top: 2.5rem;
+    
+  }
+  
+  .home-logo img {
+    display: block;
+    /* margin: 0 auto; */
+    /* width: 70%; */
+    max-width: 240px;
+    border-radius: 10%;
+    /* border-radius: 50%; */
+  }
 
-* {
-  box-sizing: border-box;
-}
+  section {
+    margin-top: 1rem;
+    font-family: raleway;
+  }
 
-body,
-div,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-form,
-fieldset,
-input,
-textarea,
-p,
-blockquote,
-th,
-td {
-  margin: 0;
-  padding: 0;
-}
+  form {
+    border: 1px solid black;
+    width: 35%;
+    margin: 0 auto;
+  }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
+  input {
+    display: inline-block;
+  }
+  
 }

@@ -1,0 +1,74 @@
+@font-face {
+  font-family: sourGummyRegular;
+  src: url(./assets/fonts/sour-gummy/SourGummy-Regular.ttf);
+}
+
+@font-face {
+  font-family: sourGummyBold;
+  src: url(./assets/fonts/sour-gummy/SourGummy-Bold.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: raleway;
+  src: url(./assets/fonts/raleway/Raleway-Regular.ttf);
+}
+
+@font-face {
+  font-family: ralewayBold;
+  src: url(./assets/fonts/raleway/Raleway-Bold.ttf);
+  font-weight: bold;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  --blue-background: hsl(194, 100%, 46%);
+}
+
+.flex-column-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  border: 1px solid black;
+  padding: .5rem 0;
+}
