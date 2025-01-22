@@ -68,6 +68,15 @@ html {
   height: 100vh;
 }
 
+.blue-background{
+  background-color: var(--blue-background);
+  color: white;
+}
+
+.text-center{
+  text-align: center;
+}
+
 .flex-column-center{
   display: flex;
   flex-direction: column;

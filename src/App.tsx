@@ -1,12 +1,13 @@
 import "./App.css";
 import { Link } from "react-router";
 import logo from "./assets/My Pet Care Logo Blue.png";
+import styles from "./components/styles/app.module.css";
 
 function App() {
   return (
     <>
       <header className="blue-background flex-column-center">
-        <div className="home-logo flex-column-center">
+        <div className={`${styles["home-logo"]} flex-column-center`}>
           <img src={logo} alt="My Pet Care Logo Blue" />
         </div>
         <h1>My Pet Care</h1>
@@ -23,15 +24,14 @@ function App() {
             <input type="password" name="password" id="password" />
           </div>
         </form>
-        <div className="flex-column-center links">
+        <div className={`${styles.links} flex-column-center`}>
           <Link to="home" className="button">
             Login
           </Link>
-          <Link to="first-login" className="button orange-button">
+          <Link to="create-account" className="button orange-button">
             Create Account
           </Link>
           <Link to="account-recovery">Can't Login? Recover Account</Link>
-
         </div>
       </section>
     </>
