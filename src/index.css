@@ -20,6 +20,11 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: raleWayLight;
+  src: url(./assets/fonts/raleway/Raleway-Light.ttf);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -59,6 +64,8 @@ body {
 
 html {
   --blue-background: hsl(194, 100%, 46%);
+  --scarlet: hsl(14, 100%, 46%);
+  height: 100vh;
 }
 
 .flex-column-center{
@@ -70,5 +77,19 @@ html {
 
 .button {
   border: 1px solid black;
+  color: black;
   padding: .5rem 0;
+  width: 180px;
+  text-align: center;
+  border-radius: 9px;
+  text-decoration: none;
+  font-size: 1.2rem;
 }
+
+.orange-button {
+  background-color: var(--scarlet);
+  color: white;
+  border: none;
+}
+
+

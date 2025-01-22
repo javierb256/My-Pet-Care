@@ -3,7 +3,6 @@ import { Link } from "react-router";
 import logo from "./assets/My Pet Care Logo Blue.png";
 
 function App() {
-  // Login Page
   return (
     <>
       <header className="blue-background flex-column-center">
@@ -14,27 +13,29 @@ function App() {
       </header>
       <section className="flex-column-center">
         <h2>Please Login</h2>
-        {/* <form action="">
-          <label htmlFor="username">
-            Username
+        <form action="">
+          <div>
+            <label htmlFor="username">Username</label>
             <input type="text" name="username" id="username" />
-          </label>
-          <label>
-            Password
+          </div>
+          <div>
+            <label htmlFor="password">Password</label>
             <input type="password" name="password" id="password" />
-          </label>
-        </form> */}
-        {/* <Link to="home" className="button">Login</Link>
-        <Link to="first-login" className="button">New User</Link>
-        <Link to="account-recovery">Can't Login? Recover Account</Link> */}
+          </div>
+        </form>
+        <div className="flex-column-center links">
+          <Link to="home" className="button">
+            Login
+          </Link>
+          <Link to="first-login" className="button orange-button">
+            Create Account
+          </Link>
+          <Link to="account-recovery">Can't Login? Recover Account</Link>
+
+        </div>
       </section>
     </>
   );
 }
-
-// function handleSubmit =(event)=> {
-//   event.preventDefault();
-//   alert('stopped form')
-// }
 
 export default App;

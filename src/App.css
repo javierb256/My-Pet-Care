@@ -38,13 +38,53 @@
   }
 
   form {
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
     width: 35%;
-    margin: 0 auto;
+    margin: 1rem auto;
+    gap: 13px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
   }
 
   input {
     display: inline-block;
+    width: 100%;
+    line-height: 35px;
+    padding-left: 7px;
+    font-size: 1.1rem;
+    font-weight: 100;
+    font-family: raleWayLight;
+  }
+  
+  .links {
+    gap: 13px;
+  }
+
+  .links :first-child:hover {
+    background-color: var(--blue-background);
+    color: white;
+    font-weight: bold;
+    border: none;
+  }
+
+  .links :nth-child(2):hover {
+    background-color: var(--blue-background);
+    font-weight: bold;
+  }
+
+  .links :last-child{
+    text-decoration: none;
+    font-family: ralewayBold;
+    color: black;
+  }
+
+  .links :last-child:hover{
+    color: var(--blue-background );
   }
   
 }
