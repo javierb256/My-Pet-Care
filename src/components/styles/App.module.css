@@ -1,21 +1,14 @@
-@media screen and (min-width: 992px){
-    header {
-      background-color: var(--blue-background);
-      color: white;
-      gap: 15px;
-      padding-bottom: 1rem;
-    }
-    
-    header h1 {
+@media screen and (min-width: 992px){    
+    .main-page-h1 {
       font-family: sourGummyRegular;
       font-size: 3rem;
+      padding: 1rem 0;
     }
     
     .home-logo {
       width: 100%;
       max-width: 350px;
       margin: 0 auto;
-      /* padding-top: 3rem; */
       padding: 2.5rem 0;
       border-radius: 50%;
       background-color: white;
@@ -25,19 +18,16 @@
     
     .home-logo img {
       display: block;
-      /* margin: 0 auto; */
-      /* width: 70%; */
       max-width: 240px;
       border-radius: 10%;
-      /* border-radius: 50%; */
     }
   
-    section {
+    .main-page-section {
       margin-top: 1rem;
       font-family: raleway;
     }
   
-    form {
+    .main-page-section form {
       display: flex;
       flex-direction: column;
       width: 35%;
@@ -45,13 +35,13 @@
       gap: 13px;
     }
   
-    label {
+    .main-page-section label {
       display: block;
       margin-bottom: 5px;
       font-weight: bold;
     }
   
-    input {
+    .main-page-section input {
       display: inline-block;
       width: 100%;
       line-height: 35px;

@@ -10,9 +10,9 @@ function App() {
         <div className={`${styles["home-logo"]} flex-column-center`}>
           <img src={logo} alt="My Pet Care Logo Blue" />
         </div>
-        <h1>My Pet Care</h1>
+        <h1 className={styles["main-page-h1"]}>My Pet Care</h1>
       </header>
-      <section className="flex-column-center">
+      <section className={`${styles["main-page-section"]} flex-column-center`}>
         <h2>Please Login</h2>
         <form action="">
           <div>

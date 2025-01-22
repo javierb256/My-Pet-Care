@@ -68,6 +68,10 @@ html {
   height: 100vh;
 }
 
+header {
+  font-family: ralewayBold;
+}
+
 .blue-background{
   background-color: var(--blue-background);
   color: white;

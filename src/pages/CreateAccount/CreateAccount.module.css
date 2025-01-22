@@ -1,0 +1,7 @@
+.create-account-header {
+    text-align: center;
+    background-color: var(--blue-background);
+    color: white;
+    padding: 2rem 0;
+    font-size: 2rem;
+}
