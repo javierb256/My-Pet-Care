@@ -65,11 +65,16 @@ body {
 html {
   --blue-background: hsl(194, 100%, 46%);
   --scarlet: hsl(14, 100%, 46%);
+  --border-stroke: hsl(0, 0%, 59%);
   height: 100vh;
 }
 
-header {
+h1,h2,h3,h4,h5,h6 {
   font-family: ralewayBold;
+}
+
+.margin-top-2 {
+  margin-top: 5rem;
 }
 
 .blue-background{
@@ -79,6 +84,10 @@ header {
 
 .text-center{
   text-align: center;
+}
+
+.background-red{
+  background-color: red;
 }
 
 .flex-column-center{
