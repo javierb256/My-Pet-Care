@@ -2,6 +2,7 @@ import "./App.css";
 import { Link } from "react-router";
 import logo from "./assets/My Pet Care Logo Blue.png";
 import styles from "./components/styles/app.module.css";
+import LinkButton from "./components/LinkButton/LinkButton";
 
 function App() {
   return (
@@ -25,12 +26,10 @@ function App() {
           </div>
         </form>
         <div className={`${styles.links} flex-column-center`}>
-          <Link to="home" className="button">
-            Login
-          </Link>
-          <Link to="create-account" className="button orange-button">
-            Create Account
-          </Link>
+          <LinkButton to="home">Login</LinkButton>
+          <LinkButton to="create-account" color={"scarlet"}>
+            New User
+          </LinkButton>
           <Link to="account-recovery">Can't Login? Recover Account</Link>
         </div>
       </section>

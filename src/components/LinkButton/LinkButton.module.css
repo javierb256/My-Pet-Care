@@ -1,0 +1,18 @@
+
+  .button {
+    border: 1px solid black;
+    color: black;
+    padding: .5rem 0;
+    width: 180px;
+    text-align: center;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  .scarlet {
+    background-color: var(--scarlet);
+    color: white;
+    border: none;
+  }
+  

@@ -11,3 +11,10 @@
     font-size: 1.8rem;
     margin-top: 2rem;
 }
+
+.account-information-form label {
+    display: inline-block;
+}
+.account-information-form input {
+    width: 100%;
+}

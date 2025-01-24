@@ -1,5 +1,6 @@
 import styles from "./CreateAccount.module.css";
 import BoxContainer from "../../components/BoxContainer/BoxContainer"
+import Button from "../../components/LinkButton/LinkButton";
 
 function CreateAccount() {
   return (
@@ -11,25 +12,26 @@ function CreateAccount() {
         Account Information
       </h2>
       
-      <BoxContainer className={`blue-background`}>
-        <form>
+      <BoxContainer>
+        <form className={`${styles["account-information-form"]} margin-top-2`}>
             <div>
-                <label></label>
-                <input></input>
+                <label htmlFor="first-name">First Name</label>
+                <input id="first-name" name="first-name" type="text"></input>
             </div>
             <div>
-                <label></label>
-                <input></input>
+                <label htmlFor="last-name">Last Name</label>
+                <input id="last-name" name="last-name" type="text"></input>
             </div>
             <div>
-                <label></label>
-                <input></input>
+                <label htmlFor="password">Password</label>
+                <input id="password" name="password" type="password"></input>
             </div>
             <div>
-                <label></label>
-                <input></input>
+                <label htmlFor="email">Email</label>
+                <input id="email" name="email" type="email"></input>
             </div>
             {/* place button here  */}
+            <Button>Create Account</Button>
         </form>
       </BoxContainer>
     </>
