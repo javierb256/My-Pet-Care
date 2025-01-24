@@ -12,9 +12,36 @@
     margin-top: 2rem;
 }
 
-.account-information-form label {
-    display: inline-block;
+.back-button{
+    margin-left: .8rem;
+    margin-top: .5rem;
 }
-.account-information-form input {
-    width: 100%;
+
+.container {
+    max-width: 950px;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    font-family: raleway;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    padding: .7rem;
+    gap: 10px;
+    
+}
+
+.container a {
+    display: block;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .5rem;
+
+}
+
+.container a:hover {
+    background-color: var(--blue-background);
 }

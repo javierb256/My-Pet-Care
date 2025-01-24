@@ -51,6 +51,33 @@
   color: var(--blue-background);
 }
 
+
+.main-page-section form{
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  min-width: 300px;
+  margin: 1rem auto;
+  gap: 13px;
+}
+
+.main-page-section label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-family: raleWayLight;
+}
+
+.main-page-section input {
+  display: inline-block;
+  width: 100%;
+  line-height: 35px;
+  padding-left: 7px;
+  font-size: 1.1rem;
+  font-weight: 100;
+  font-family: raleWayLight;
+}
+
 @media screen and (max-width: 800px) {
   .links :last-child {
     margin-bottom: 0.7rem;

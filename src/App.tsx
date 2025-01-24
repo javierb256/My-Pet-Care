@@ -15,7 +15,7 @@ function App() {
       </header>
       <section className={`${styles["main-page-section"]} flex-column-center`}>
         <h2>Please Login</h2>
-        <form action="">
+        <form action="" className="main-page-form">
           <div>
             <label htmlFor="username">Username</label>
             <input type="text" name="username" id="username" />

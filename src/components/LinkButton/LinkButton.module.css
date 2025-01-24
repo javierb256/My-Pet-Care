@@ -14,5 +14,7 @@
     background-color: var(--scarlet);
     color: white;
     border: none;
+    font-family: raleway;
+    font-weight: bold;
   }
   
