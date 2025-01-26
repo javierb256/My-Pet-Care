@@ -66,6 +66,7 @@ html {
   --blue-background: hsl(194, 100%, 46%);
   --scarlet: hsl(14, 100%, 46%);
   --border-stroke: hsl(0, 0%, 59%);
+  --grey-filler: hsl(0, 0%, 94%);
   height: 100vh;
 }
 
@@ -95,6 +96,11 @@ h6 {
   color: white;
 }
 
+.grey-filler {
+  background-color: var(--grey-filler);
+  color: black;
+}
+
 .text-center {
   text-align: center;
 }
@@ -116,31 +122,6 @@ h6 {
   border: none;
 }
 
-/* form {
-  display: flex;
-  flex-direction: column;
-  width: 35%;
-  min-width: 300px;
-  margin: 1rem auto;
-  gap: 13px;
-} */
-
-/* label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  font-family: raleWayLight;
-} */
-
-/* input {
-  display: inline-block;
-  width: 100%;
-  line-height: 35px;
-  padding-left: 7px;
-  font-size: 1.1rem;
-  font-weight: 100;
-  font-family: raleWayLight;
-} */
 
 .input {
   display: inline-block;

@@ -1,0 +1,120 @@
+.header {
+  padding: 2rem 0;
+}
+
+.header h1 {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.box:active{
+    background-color: #b9b9b9;
+}
+
+.box p {
+  display: block;
+  font-family: raleway;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.box:hover {
+  cursor: pointer;
+}
+
+.first-pet {
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 1.2rem;
+}
+
+.radio {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.radio legend {
+  font-family: raleWayBold;
+  font-size: 1.2rem;
+}
+
+.radio div {
+  display: flex;
+  align-items: center;
+}
+
+.radio label,
+.radio input {
+  display: inline-block;
+}
+
+.radio input {
+  margin-right: 0.4rem;
+  margin-bottom: 0;
+}
+
+.radio label {
+    margin-bottom: 0;
+}
+
+.pet-type {
+  margin-top: 1.5rem;
+}
+
+.pet-type label {
+  font-family: raleWayBold;
+  display: block;
+}
+
+.select {
+  margin-top: 0.3rem;
+  border: 1px solid hsl(0, 0%, 59%);
+  width: 150px;
+  padding: 0.5rem 0.5rem;
+  background-color: white;
+  font-size: 1rem;
+  /* font-weight: bold; */
+}
+
+.first-pet a {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 908px) {
+    .first-pet {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 580px) {
+  .header h1 {
+    width: 80%;
+    font-size: 1.3rem;
+  }
+
+  .box {
+    margin-top: 1.5rem;
+  }
+
+  .box p {
+    font-size: 1.2rem;
+  }
+}

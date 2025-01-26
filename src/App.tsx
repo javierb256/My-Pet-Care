@@ -26,7 +26,7 @@ function App() {
           </div>
         </form>
         <div className={`${styles.links} flex-column-center`}>
-          <LinkButton to="home">Login</LinkButton>
+          <LinkButton to="first-login">Login</LinkButton>
           <LinkButton to="create-account" color={"scarlet"}>
             New User
           </LinkButton>
