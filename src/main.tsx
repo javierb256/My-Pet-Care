@@ -8,7 +8,7 @@ import Appointments from './pages/Appointments.tsx'
 import CreateAccount from './pages/CreateAccount/CreateAccount.tsx'
 import FirstTimeLogin from './pages/FirstTimeLogin/FirstTimeLogin.tsx'
 import Health from './pages/Health.tsx'
-import Home from './pages/Home.tsx'
+import Home from './pages/Home/Home.tsx'
 import AccountRecovery from './pages/AccountRecovery.tsx'
 import Confirmation from './pages/Confirmation/Confirmation.tsx'
 
