@@ -1,36 +1,54 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    /* background-color: red; */
-    width: 100%;
-    border-bottom: 1px solid black;
-    padding: .5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid hsl(0, 0%, 79.2%);
+  padding: 0rem 0.6rem;
 }
 
 .navbar-image {
-    width: 80px;
-    height: 80px;
+  width: 80px;
+  height: 80px;
 }
 
 .profile-options {
-    display: flex;
-    background-color: red;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-options:hover {
+  cursor: pointer;
+}
+
+.profile-options :first-child {
+  width: 20px;
+}
+
+.profile-options :last-child {
+  height: 55px;
+  width: 55px;
 }
 
 .navbar-links {
-    display: flex;
-    align-items: center;
-    gap: 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
 .navbar-links a {
-    text-decoration: none;
-    color: black;
-    font-size: 1.3rem;
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
 }
 
 .navbar-links li {
-    list-style: none;
-    font-family: raleway;
+  list-style: none;
+  font-family: raleway;
 }
 
+.navbar-links li:not(:first-child):hover a {
+  color: var(--blue-background);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
