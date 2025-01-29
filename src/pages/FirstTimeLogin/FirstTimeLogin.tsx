@@ -19,11 +19,11 @@ function FirstTimeLogin(){
                     <legend>Gender</legend>
                     <div>
                         <input type="radio" id="male" name="gender"/>
-                        <label className="label">Male</label>
+                        <label className="label" htmlFor="male">Male</label>
                     </div>
                     <div>
-                        <input type="radio" id="femail" name="gender"/>
-                        <label className="label">Female</label>
+                        <input type="radio" id="female" name="gender"/>
+                        <label className="label" htmlFor="female">Female</label>
                     </div>
                 </div>
                 <div className={styles["pet-type"]}>
