@@ -34,8 +34,9 @@ function FirstTimeLogin(){
                         <option value="cat">Cat</option>
                         <option value="bird">Bird</option>
                         <option value="fish">Fish</option>
+                        <option value="reptile">Reptile</option>
+                        <option value="small-mammal">Small Mammal</option>
                     </select>
-                    {/* select menu */}
                 </div>
                 <LinkButton to="../home" color="scarlet">Add New Pet</LinkButton>
             </BoxContainer>

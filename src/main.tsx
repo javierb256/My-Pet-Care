@@ -9,7 +9,7 @@ import CreateAccount from './pages/CreateAccount/CreateAccount.tsx'
 import FirstTimeLogin from './pages/FirstTimeLogin/FirstTimeLogin.tsx'
 import Health from './pages/Health/Health.tsx'
 import Home from './pages/Home/Home.tsx'
-import AccountRecovery from './pages/AccountRecovery.tsx'
+import AccountRecovery from './pages/AccountRecovery/AccountRecovery.tsx'
 import Confirmation from './pages/Confirmation/Confirmation.tsx'
 
 createRoot(document.getElementById('root')!).render(
