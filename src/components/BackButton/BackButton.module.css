@@ -1,6 +1,8 @@
 .button-container {
     display: block;
     width: 30px;
+    margin-left: .5rem;
+    margin-top: .5rem;
 }
 
 .button-image{

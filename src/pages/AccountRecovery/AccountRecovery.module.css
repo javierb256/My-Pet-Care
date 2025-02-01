@@ -1,0 +1,40 @@
+.header {
+    font-size: 3rem;
+    padding: 2rem 0;
+}
+
+.box {
+    margin: 2rem auto;
+    width: 500px;
+    padding: .5rem;
+}
+
+.box label {
+    font-family: raleWayBold;
+    margin-bottom: .1rem;
+}
+
+.box a {
+    margin: .5rem auto;
+    margin-bottom: 0;
+}
+
+.box a:hover {
+    background-color: var(--blue-background);
+}
+
+button {
+    display: block;
+    background-color: var(--scarlet);
+    margin-top: .5rem;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--blue-background);
+    color: white;
+}
