@@ -3,6 +3,7 @@ import BoxContainer from "../../components/BoxContainer/BoxContainer";
 import Button from "../../components/Button/Button";
 import { useState } from "react";
 import BackButton from "../../components/BackButton/BackButton";
+import LinkButton from "../../components/LinkButton/LinkButton";
 
 function AccountRecovery() {
   const [formSent, setFormSet] = useState(false);
@@ -16,7 +17,10 @@ function AccountRecovery() {
       </header>
       {formSent ? (
         <>
-            <h2>Form is now sent</h2>
+          <BoxContainer className={`grey-filler ${styles.box2}`}>
+            <p>A recovery email has been sent to the entered email. If there is an account associated with the email you will receive account recovery instructions.</p>
+            <LinkButton to="/" color="scarlet" >Back to Login</LinkButton>
+          </BoxContainer>
         </>
       ) : (
           <>

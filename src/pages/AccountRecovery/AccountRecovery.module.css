@@ -23,6 +23,26 @@
     background-color: var(--blue-background);
 }
 
+.box2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    margin: 4rem auto;
+    gap: 20px;
+    padding: .8rem;
+}
+
+.box2 p {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.box2 a:hover {
+   background-color: var(--blue-background);
+}
+
 button {
     display: block;
     background-color: var(--scarlet);

@@ -96,6 +96,11 @@ h6 {
   color: white;
 }
 
+.blue-hover {
+  background-color: var(--blue-background);
+  color: white;
+}
+
 .grey-filler {
   background-color: var(--grey-filler);
   color: black;
