@@ -25,7 +25,7 @@ function AccountRecovery() {
       ) : (
           <>
           <BackButton to="/" className="back"></BackButton>
-          <h2 className="text-center margin-top-2">
+          <h2 className={`${styles.message}  text-center margin-top-2`}>
             Please enter the email associated with your account
           </h2>
           <BoxContainer className={styles.box}>
