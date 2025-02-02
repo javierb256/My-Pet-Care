@@ -7,11 +7,12 @@ function FirstTimeLogin() {
   const [petImage, setPetImage] = useState("");
   const imageUploadRef = useRef<HTMLInputElement>(null);
 
-  //get image from file upload set it to the petImage variable
   const showUploadedImage = async () => {
     if (imageUploadRef.current !== null) {
-      const uploadedFile = imageUploadRef.current.files![0];
-      const cachedURL = URL.createObjectURL(uploadedFile);
+    //.files will give an array of files that are uploaded by the user
+    //since only one is sent we use the first element [0]
+      const petImageFile = imageUploadRef.current.files![0];
+      const cachedURL = URL.createObjectURL(petImageFile);
       setPetImage(cachedURL);
     }
   };
