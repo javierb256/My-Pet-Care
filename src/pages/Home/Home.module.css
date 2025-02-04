@@ -1,0 +1,77 @@
+.blue-background {
+    background-color: var(--blue-background);
+}
+
+.red-background {
+    background-color: #EC0000;
+}
+
+.green-background {
+    background-color: #14D24D;
+}
+
+.purple-background {
+    background-color: #CB5BFF;
+}
+
+h3 {
+    font-family: sourGummyRegular;
+    text-align: center;
+    font-size: 2.3rem;
+}
+
+.home-header {
+    display: flex;
+    background-color: #FAFAFA;
+    justify-content: space-between;
+    padding: 7rem 3rem;
+}
+
+.home-pet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.home-pet img {
+    max-width: 400px;
+    height: 450px;
+}
+
+.home-pet-facts {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid black;
+    padding: 1.2rem 1rem;
+    width: 450px;
+    gap: 25px;
+}
+
+.pet-fact-container {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    font-family: raleWayBold;
+}
+
+.pet-fact-container div > p:first-child {
+    color: #969696;
+}
+
+.icon-container {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.2rem;
+}
+
+.pet-fact-container img {
+    width: 54px;
+}
+
