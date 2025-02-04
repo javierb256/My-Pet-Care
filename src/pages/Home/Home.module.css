@@ -22,9 +22,20 @@ h3 {
 
 .home-header {
     display: flex;
+    position: relative;
     background-color: #FAFAFA;
     justify-content: space-between;
     padding: 7rem 3rem;
+ 
+}
+
+.home-header > img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: fit-content;
+    opacity: .1;
 }
 
 .home-pet {

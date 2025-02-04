@@ -79,7 +79,7 @@ function FirstTimeLogin() {
               <option value="small-mammal">Small Mammal</option>
             </select>
           </div>
-          <LinkButton to="../home" color="scarlet">
+          <LinkButton to="../home" color="scarlet" >
             Add New Pet
           </LinkButton>
         </BoxContainer>

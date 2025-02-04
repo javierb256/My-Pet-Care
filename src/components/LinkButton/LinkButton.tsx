@@ -6,6 +6,7 @@ interface LinkButtonProps {
   className?: string;
   color?: string;
   children: React.ReactNode;
+  state?: HTMLImageElement | string;
 }
 
 const LinkButton: React.FC<LinkButtonProps> = ({
@@ -13,11 +14,13 @@ const LinkButton: React.FC<LinkButtonProps> = ({
   color,
   children,
   className,
+  state,
 }) => {
   return (
     <Link
       to={to}
       className={`${styles.button} ${color ? styles[color] : ""} ${className ? styles[className] : ""}`}
+      state={state}
     >
       {children}
     </Link>

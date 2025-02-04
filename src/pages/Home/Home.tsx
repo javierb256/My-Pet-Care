@@ -5,17 +5,21 @@ import petKennel from "../../assets/dog-crate-icon-white.png";
 import genderIcon from "../../assets/unisex-symbol-icon-white.png";
 import weightIcon from "../../assets/lbs-measure-weight-icon(1).png";
 import ageIcon from "../../assets/age-icon-white.png";
+import { useState } from "react";
+import pawPrint from "../../assets/paw-icon.png";
 
 function Home() {
+  const [petPicture] = useState(tempPetPicture)
   return (
     <>
       <Navbar />
       {/* header section */}
       <section className={styles["home-header"]}>
+        <img src={pawPrint} alt="pet type icon" />
         <div className={styles["home-pet"]}>
           <h3>Sonic</h3>
           {/* get picture from first time login, then from database later */}
-          <img src={tempPetPicture} alt="pet picture" />
+          <img src={petPicture} alt="pet picture" />
         </div>
         <div className={styles["home-pet-facts"]}>
           <h3>My Pet Facts</h3>
@@ -62,7 +66,9 @@ function Home() {
         </div>
       </section>
       {/* weight chart */}
-      <section></section>
+      <section className={styles["home-weight"]}>
+        {/* <h2>Weight Chart <span><img src={weightIcon} alt="weight icon"/></span></h2> */}
+      </section>
       {/* calendar chart */}
       <section></section>
       {/* Notes chart */}
