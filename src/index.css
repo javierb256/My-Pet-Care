@@ -67,6 +67,7 @@ html {
   --scarlet: hsl(14, 100%, 46%);
   --border-stroke: hsl(0, 0%, 59%);
   --grey-filler: hsl(0, 0%, 94%);
+  --light-gray: #FAFAFA;
   height: 100vh;
 }
 
