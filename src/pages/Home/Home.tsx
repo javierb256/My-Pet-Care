@@ -17,7 +17,7 @@ function Home() {
     <>
       <Navbar />
       {/* header section */}
-      <section className={styles["home-header"]}>
+      <section className={`${styles["home-header"]} ${styles["home-section"]}`}>
         <img className={styles["background-image"]} src={pawPrint} alt="pet type icon" />
         <div className={styles["home-pet"]}>
           <h3>Sonic</h3>
@@ -72,16 +72,16 @@ function Home() {
         </div>
       </section>
       {/* weight chart */}
-      <section className={styles["home-weight"]}>
-        <h2>Weight Chart <span><img src={weightIcon} alt="weight icon"/></span></h2>
+      <section className={`${styles["home-weight"]} ${styles["home-section"]}`}>
+        <h2 className={styles["home"]}>Weight Chart <span><img src={weightIcon} alt="weight icon"/></span></h2>
       </section>
       {/* calendar chart */}
-      <section>
-        <h2>Calendar <span><img src={calendarIcon} alt="calendar icon"/></span></h2>
+      <section className={styles["home-section"]}>
+        <h2 className={styles["home"]}>Calendar <span><img src={calendarIcon} alt="calendar icon"/></span></h2>
       </section>
       {/* Notes chart */}
-      <section>
-        <h2>Notes <span><img src={stickyNote} alt="sticky note icon"/></span></h2>
+      <section className={styles["home-section"]}>
+        <h2 className={styles["home"]}>Notes <span><img src={stickyNote} alt="sticky note icon"/></span></h2>
         <BoxContainer className={`${styles.box} margin-top-2`}>
           <h3></h3>
         </BoxContainer>
