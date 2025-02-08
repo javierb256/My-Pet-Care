@@ -19,7 +19,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({
   return (
     <Link
       to={to}
-      className={`${styles.button} ${color ? styles[color] : ""} ${className ? styles[className] : ""}`}
+      className={`${styles.button} ${color ? styles[color] : ""} ${className || ""}`}
       state={state}
     >
       {children}
