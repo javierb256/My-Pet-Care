@@ -1,6 +1,7 @@
 import styles from "./FirstTimeLogin.module.css";
 import BoxContainer from "../../components/BoxContainer/BoxContainer";
 import LinkButton from "../../components/LinkButton/LinkButton";
+import BackButton from "../../components/BackButton/BackButton";
 import { useState, useRef } from "react";
 
 function FirstTimeLogin() {
@@ -39,6 +40,7 @@ function FirstTimeLogin() {
           />
         </div>
       </header>
+      <BackButton to="/"/>
       <section className={styles["pet-information-section"]}>
         <BoxContainer className={styles["first-pet"]}>
           <div>
