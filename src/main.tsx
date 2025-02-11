@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import App from './App.tsx'
-// import Login from './pages/login.tsx'
 import Appointments from './pages/Appointments/Appointments.tsx'
 import CreateAccount from './pages/CreateAccount/CreateAccount.tsx'
 import FirstTimeLogin from './pages/FirstTimeLogin/FirstTimeLogin.tsx'
@@ -17,7 +16,6 @@ createRoot(document.getElementById('root')!).render(
     <BrowserRouter basename='My-Pet-Care'>
     <Routes>
       <Route path="/" element={<App />}/>
-      {/* <Route path="login" element={<Login />}/> */}
       <Route path="home" element={<Home />}/>
       <Route path="health" element={<Health />}/>
       <Route path="first-login" element={<FirstTimeLogin />}/>
@@ -25,7 +23,6 @@ createRoot(document.getElementById('root')!).render(
       <Route path="appointments" element={<Appointments />}/>
       <Route path="create-account/confirmation" element={<Confirmation />}/>
       <Route path="account-recovery" element={<AccountRecovery />}/>
-      {/* <Route /> */}
     </Routes>
     </BrowserRouter>
   </StrictMode>,
