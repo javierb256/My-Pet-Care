@@ -1,7 +1,7 @@
-import "./App.css";
+// import "./App.css";
 import { Link } from "react-router";
 import logo from "./assets/My Pet Care Logo Blue.png";
-import styles from "./components/styles/App.module.css";
+import styles from "./App.module.css";
 import LinkButton from "./components/LinkButton/LinkButton";
 
 function App() {

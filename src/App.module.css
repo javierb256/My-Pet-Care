@@ -1,0 +1,108 @@
+.home-logo {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 2.5rem 0;
+  border-radius: 50%;
+  background-color: white;
+  margin-top: 2.5rem;
+}
+
+.home-logo img {
+  display: block;
+  max-width: 240px;
+  border-radius: 10%;
+}
+
+.main-page-section {
+  margin-top: 1rem;
+  font-family: raleway;
+}
+
+.main-page-h1 {
+  font-family: sourGummyRegular;
+  padding: 1rem 0;
+  font-size: 3rem;
+}
+
+.links {
+  gap: 13px;
+}
+
+.links :first-child:hover {
+  background-color: var(--blue-background);
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.links :nth-child(2):hover {
+  background-color: var(--blue-background);
+  font-weight: bold;
+}
+
+.links :last-child {
+  text-decoration: none;
+  font-family: ralewayBold;
+  color: black;
+}
+
+.links :last-child:hover {
+  color: var(--blue-background);
+}
+
+
+.main-page-section form{
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  min-width: 300px;
+  margin: 1rem auto;
+  gap: 13px;
+}
+
+.main-page-section label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-family: raleWayLight;
+}
+
+.main-page-section input {
+  display: inline-block;
+  width: 100%;
+  line-height: 35px;
+  padding-left: 7px;
+  font-size: 1.1rem;
+  font-weight: 100;
+  font-family: raleWayLight;
+}
+
+@media screen and (max-width: 800px) {
+  .links :last-child {
+    margin-bottom: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 460px){
+  .home-logo {
+    max-width: 300px;
+  }
+  .home-logo img {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .home-logo {
+    max-width: 220px;
+  }
+
+  .home-logo img {
+    max-width: 140px;
+  }
+
+  .main-page-h1 {
+    font-size: 2.4rem;
+  }
+}
