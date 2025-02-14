@@ -137,18 +137,35 @@
     height: 60px;
     width: 40px;
   }
-
+  
   .hamburger-menu:hover {
     cursor: pointer;
   }
-
-
+  
+  
   .hamburger-menu div {
     height: 5px;
     background-color: #bebebe;
   }
+  
+  .hamburger-menu div:first-child.active {
+    transform: translate(-1px, 12px) rotate(41deg);
+    
+  }
 
- 
+  .hamburger-menu div:nth-child(2).active {
+    transition: .25s ease-in-out;
+    display: none;
+  }
+
+  .hamburger-menu div:last-child.active {
+    transform: translate(-1px,-2px) rotate(-44deg);
+  }
+
+  .hamburger-menu div:first-child,
+  .hamburger-menu div:last-child {
+    transition: .40s ease-in-out;
+  }
 
 
 }

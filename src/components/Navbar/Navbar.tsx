@@ -6,10 +6,19 @@ import ProfileIcon from "../../assets/user-profile-icon.svg";
 import DownArrow from "../../assets/thin-chevron-arrow-bottom-icon.svg";
 import LinkButton from "../LinkButton/LinkButton";
 import { useState } from "react";
+import { useRef } from "react";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const openNavbar = () => setMenuOpen(!menuOpen);
+  const topDiv = useRef<HTMLDivElement>(null);
+  const bottomDiv = useRef<HTMLDivElement>(null);
+  const middleDiv = useRef<HTMLDivElement>(null);
+  const openNavbar = () => {
+    topDiv.current!.classList.toggle(styles.active);
+    bottomDiv.current!.classList.toggle(styles.active);
+    middleDiv.current!.classList.toggle(styles.active);
+    setMenuOpen(!menuOpen);
+  }
 
   return (
     <>
@@ -45,11 +54,13 @@ function Navbar() {
       </div>
       <div className={styles["navbar-mobile"]}>
         <div className={styles["navbar-mobile-bar"]}>
-          <img src={logoTransparent} alt="My Pet Care Logo" />
+          <Link to="/home">
+            <img src={logoTransparent} alt="My Pet Care Logo" />
+          </Link>
           <div className={styles["hamburger-menu"]} onClick={openNavbar}>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div ref={topDiv}></div>
+            <div ref={middleDiv}></div>
+            <div ref={bottomDiv}></div>
           </div>
         </div>
         <div
