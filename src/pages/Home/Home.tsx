@@ -9,10 +9,13 @@ import pawPrint from "../../assets/paw-icon-2.png";
 import calendarIcon from "../../assets/calendar-regular.svg"
 import stickyNote from "../../assets/sticky-note-white.svg"
 import BoxContainer from "../../components/BoxContainer/BoxContainer";
-import { useState } from "react";
+import { useLocation } from "react-router";
 
 function Home() {
-  const [petPicture] = useState(tempPetPicture)
+  const location = useLocation();
+  const petName = location.state.name;
+  const imgUrl = location.state.imageUrl;
+
   return (
     <>
       <Navbar />
@@ -20,9 +23,11 @@ function Home() {
       <section className={`${styles["home-header"]} ${styles["home-section"]}`}>
         <img className={styles["background-image"]} src={pawPrint} alt="pet type icon" />
         <div className={styles["home-pet"]}>
-          <h3>Sonic</h3>
+          <h3>{petName === "" ? "Pet Name" : petName}</h3>
           {/* get picture from first time login, then from database later */}
-          <img src={petPicture} alt="pet picture" />
+          {/* <img src={petPicture} alt="pet picture" /> */}
+          <img src={imgUrl === "" ? tempPetPicture : imgUrl} alt="pet picture" />
+
         </div>
         <div className={styles["home-pet-facts"]}>
           <h3>My Pet Facts</h3>

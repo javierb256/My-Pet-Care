@@ -1,12 +1,16 @@
 import styles from "./FirstTimeLogin.module.css";
 import BoxContainer from "../../components/BoxContainer/BoxContainer";
-import LinkButton from "../../components/LinkButton/LinkButton";
 import BackButton from "../../components/BackButton/BackButton";
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router";
 
 function FirstTimeLogin() {
   const [petImage, setPetImage] = useState("");
+  const [petName, setPetName] = useState("Pet Name");
+  const [imageUrl, setImageUrl] = useState("")
   const imageUploadRef = useRef<HTMLInputElement>(null);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
 
   const showUploadedImage = async () => {
     if (imageUploadRef.current !== null) {
@@ -15,8 +19,20 @@ function FirstTimeLogin() {
       const petImageFile = imageUploadRef.current.files![0];
       const cachedURL = URL.createObjectURL(petImageFile);
       setPetImage(cachedURL);
+      setImageUrl(cachedURL);
     }
   };
+
+  const setPet = () => {
+    if(nameRef.current !== null){
+      setPetName(nameRef.current!.value)
+    }
+  }
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    navigate("/home", {state: {name: petName, imageUrl: imageUrl}})
+  }
 
   return (
     <>
@@ -43,6 +59,7 @@ function FirstTimeLogin() {
       <BackButton to="/"/>
       <section className={styles["pet-information-section"]}>
         <BoxContainer className={styles["first-pet"]}>
+          <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="pet-name" className="label">
               Pet Name
@@ -52,18 +69,19 @@ function FirstTimeLogin() {
               name="pet-name"
               type="text"
               className="input"
-            ></input>
+              ref={nameRef}
+            ></input>Create a form
           </div>
           <div className={styles["radio"]}>
             <legend>Gender</legend>
             <div>
-              <input type="radio" id="male" name="gender" />
+              <input type="radio" id="male" name="gender"/>
               <label className="label" htmlFor="male">
                 Male
               </label>
             </div>
             <div>
-              <input type="radio" id="female" name="gender" />
+              <input type="radio" id="female" name="gender"/>
               <label className="label" htmlFor="female">
                 Female
               </label>
@@ -81,9 +99,9 @@ function FirstTimeLogin() {
               <option value="small-mammal">Small Mammal</option>
             </select>
           </div>
-          <LinkButton to="../home" color="scarlet" >
-            Add New Pet
-          </LinkButton>
+          <button className={styles.button} onClick={setPet} type="submit">submit</button>
+          </form>
+          
         </BoxContainer>
       </section>
     </>
