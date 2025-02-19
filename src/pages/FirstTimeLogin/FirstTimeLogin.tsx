@@ -7,15 +7,16 @@ import { useNavigate } from "react-router";
 function FirstTimeLogin() {
   const [petImage, setPetImage] = useState("");
   const [petName, setPetName] = useState("Pet Name");
-  const [imageUrl, setImageUrl] = useState("")
+  const [imageUrl, setImageUrl] = useState("");
+  const [gender, setGender] = useState("Male");
   const imageUploadRef = useRef<HTMLInputElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
   const showUploadedImage = async () => {
     if (imageUploadRef.current !== null) {
-    //.files will give an array of files that are uploaded by the user
-    //since only one is sent we use the first element [0]
+      //.files will give an array of files that are uploaded by the user
+      //since only one is sent we use the first element [0]
       const petImageFile = imageUploadRef.current.files![0];
       const cachedURL = URL.createObjectURL(petImageFile);
       setPetImage(cachedURL);
@@ -24,15 +25,21 @@ function FirstTimeLogin() {
   };
 
   const setPet = () => {
-    if(nameRef.current !== null){
-      setPetName(nameRef.current!.value)
+    if (nameRef.current !== null) {
+      setPetName(nameRef.current!.value);
     }
-  }
+  };
+
+  const onGenderSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setGender(event.target.value);
+  };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    navigate("/home", {state: {name: petName, imageUrl: imageUrl}})
-  }
+    navigate("/home", {
+      state: { name: petName, imageUrl: imageUrl, gender: gender },
+    });
+  };
 
   return (
     <>
@@ -56,52 +63,67 @@ function FirstTimeLogin() {
           />
         </div>
       </header>
-      <BackButton to="/"/>
+      <BackButton to="/" />
       <section className={styles["pet-information-section"]}>
         <BoxContainer className={styles["first-pet"]}>
           <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="pet-name" className="label">
-              Pet Name
-            </label>
-            <input
-              id="pet-name"
-              name="pet-name"
-              type="text"
-              className="input"
-              ref={nameRef}
-            ></input>Create a form
-          </div>
-          <div className={styles["radio"]}>
-            <legend>Gender</legend>
             <div>
-              <input type="radio" id="male" name="gender"/>
-              <label className="label" htmlFor="male">
-                Male
+              <label htmlFor="pet-name" className="label">
+                Pet Name
               </label>
+              <input
+                id="pet-name"
+                name="pet-name"
+                type="text"
+                className="input"
+                ref={nameRef}
+              ></input>
             </div>
-            <div>
-              <input type="radio" id="female" name="gender"/>
-              <label className="label" htmlFor="female">
-                Female
-              </label>
+            <div className={styles["radio"]}>
+              <legend>Gender</legend>
+              <div>
+                <input
+                  onChange={onGenderSelect}
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  value="Male"
+                  checked={gender === "Male"}
+                />
+                <label className="label" htmlFor="male">
+                  Male
+                </label>
+              </div>
+              <div>
+                <input
+                  onChange={onGenderSelect}
+                  type="radio"
+                  id="female"
+                  name="gender"
+                  value="Female"
+                  checked={gender === "Female"}
+                />
+                <label className="label" htmlFor="female">
+                  Female
+                </label>
+              </div>
             </div>
-          </div>
-          <div className={styles["pet-type"]}>
-            <label htmlFor="pet-type">Select Pet Species</label>
-            <select className={styles.select}>
-              <option value="">Species</option>
-              <option value="dog">Dog</option>
-              <option value="cat">Cat</option>
-              <option value="bird">Bird</option>
-              <option value="fish">Fish</option>
-              <option value="reptile">Reptile</option>
-              <option value="small-mammal">Small Mammal</option>
-            </select>
-          </div>
-          <button className={styles.button} onClick={setPet} type="submit">submit</button>
+            <div className={styles["pet-type"]}>
+              <label htmlFor="pet-type">Select Pet Species</label>
+              <select className={styles.select}>
+                <option value="">Species</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="bird">Bird</option>
+                <option value="fish">Fish</option>
+                <option value="reptile">Reptile</option>
+                <option value="small-mammal">Small Mammal</option>
+              </select>
+            </div>
+            <button className={styles.button} onClick={setPet} type="submit">
+              Submit
+            </button>
           </form>
-          
         </BoxContainer>
       </section>
     </>
