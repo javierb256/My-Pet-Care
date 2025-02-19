@@ -16,6 +16,7 @@ function Home() {
   const petName = location.state.name;
   const imgUrl = location.state.imageUrl;
   const gender = location.state.gender;
+  const species = location.state.species;
 
   return (
     <>
@@ -48,7 +49,7 @@ function Home() {
               </div>
               <div className={styles["fact-details"]}>
                 <p>Species</p>
-                <p>name</p>
+                <p>{species}</p>
               </div>
             </div>
             {/* fact container */}

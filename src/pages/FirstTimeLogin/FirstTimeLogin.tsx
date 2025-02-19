@@ -9,6 +9,7 @@ function FirstTimeLogin() {
   const [petName, setPetName] = useState("Pet Name");
   const [imageUrl, setImageUrl] = useState("");
   const [gender, setGender] = useState("Male");
+  const [species, setSpecies] = useState("");
   const imageUploadRef = useRef<HTMLInputElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -34,10 +35,14 @@ function FirstTimeLogin() {
     setGender(event.target.value);
   };
 
+  const speciesSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSpecies(event.target.value);
+  }
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     navigate("/home", {
-      state: { name: petName, imageUrl: imageUrl, gender: gender },
+      state: { name: petName, imageUrl: imageUrl, gender: gender, species: species },
     });
   };
 
@@ -110,14 +115,14 @@ function FirstTimeLogin() {
             </div>
             <div className={styles["pet-type"]}>
               <label htmlFor="pet-type">Select Pet Species</label>
-              <select className={styles.select}>
+              <select className={styles.select} onChange={speciesSelect}>
                 <option value="">Species</option>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="bird">Bird</option>
-                <option value="fish">Fish</option>
-                <option value="reptile">Reptile</option>
-                <option value="small-mammal">Small Mammal</option>
+                <option value="Dog">Dog</option>
+                <option value="Cat">Cat</option>
+                <option value="Bird">Bird</option>
+                <option value="Fish">Fish</option>
+                <option value="Reptile">Reptile</option>
+                <option value="Small Mammal">Small Mammal</option>
               </select>
             </div>
             <button className={styles.button} onClick={setPet} type="submit">
