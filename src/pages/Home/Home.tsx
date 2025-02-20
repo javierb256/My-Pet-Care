@@ -17,6 +17,8 @@ function Home() {
   const imgUrl = location.state.imageUrl;
   const gender = location.state.gender;
   const species = location.state.species;
+  const weight = location.state.weight;
+  const age = location.state.age;
 
   return (
     <>
@@ -73,7 +75,7 @@ function Home() {
               </div>
               <div className={styles["fact-details"]}>
                 <p>Weight</p>
-                <p>name</p>
+                <p>{weight}</p>
               </div>
             </div>
             {/* fact container */}
@@ -85,7 +87,7 @@ function Home() {
               </div>
               <div className={styles["fact-details"]}>
                 <p>Age</p>
-                <p>name</p>
+                <p>{age}</p>
               </div>
             </div>
           </div>

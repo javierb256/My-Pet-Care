@@ -8,8 +8,10 @@ function FirstTimeLogin() {
   const [petImage, setPetImage] = useState("");
   const [petName, setPetName] = useState("Pet Name");
   const [imageUrl, setImageUrl] = useState("");
-  const [gender, setGender] = useState("Male");
+  const [gender, setGender] = useState("");
   const [species, setSpecies] = useState("");
+  const [weight, setWeight] = useState("");
+  const [age, setAge] = useState("");
   const imageUploadRef = useRef<HTMLInputElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -37,12 +39,27 @@ function FirstTimeLogin() {
 
   const speciesSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSpecies(event.target.value);
+  };
+
+  const selectWeight = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setWeight(event.target.value)
+  }
+
+  const selectAge = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setAge(event.target.value);
   }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     navigate("/home", {
-      state: { name: petName, imageUrl: imageUrl, gender: gender, species: species },
+      state: {
+        name: petName,
+        imageUrl: imageUrl,
+        gender: gender,
+        species: species,
+        weight: weight,
+        age: age,
+      },
     });
   };
 
@@ -71,9 +88,9 @@ function FirstTimeLogin() {
       <BackButton to="/" />
       <section className={styles["pet-information-section"]}>
         <BoxContainer className={styles["first-pet"]}>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className={styles["my-pet-form"]}>
             <div>
-              <label htmlFor="pet-name" className="label">
+              <label htmlFor="pet-name" className={`${styles.label}`}>
                 Pet Name
               </label>
               <input
@@ -85,7 +102,7 @@ function FirstTimeLogin() {
               ></input>
             </div>
             <div className={styles["radio"]}>
-              <legend>Gender</legend>
+              <label className={styles.label} htmlFor="gender">Gender</label>
               <div>
                 <input
                   onChange={onGenderSelect}
@@ -113,9 +130,16 @@ function FirstTimeLogin() {
                 </label>
               </div>
             </div>
-            <div className={styles["pet-type"]}>
-              <label htmlFor="pet-type">Select Pet Species</label>
-              <select className={styles.select} onChange={speciesSelect}>
+            <div>
+              <label htmlFor="pet-type" className={styles.label}>
+                Select Pet Species
+              </label>
+              <select
+                className={styles.select}
+                id="pet-type"
+                name="pet-type"
+                onChange={speciesSelect}
+              >
                 <option value="">Species</option>
                 <option value="Dog">Dog</option>
                 <option value="Cat">Cat</option>
@@ -124,6 +148,16 @@ function FirstTimeLogin() {
                 <option value="Reptile">Reptile</option>
                 <option value="Small Mammal">Small Mammal</option>
               </select>
+            </div>
+            <div>
+              <label className={styles.label} htmlFor="weight">Weight</label>
+              <input type="number" name="weight" id="weight" min="0" max="200" onChange={selectWeight}/>
+            </div>
+            <div>
+              <label className={styles.label} htmlFor="age">
+                Age
+              </label>
+              <input type="number" name="age" id="age" min="0" max="50" onChange={selectAge}/>
             </div>
             <button className={styles.button} onClick={setPet} type="submit">
               Submit
