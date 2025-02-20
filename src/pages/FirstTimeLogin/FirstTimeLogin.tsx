@@ -150,7 +150,7 @@ function FirstTimeLogin() {
               </select>
             </div>
             <div>
-              <label className={styles.label} htmlFor="weight">Weight</label>
+              <label className={styles.label} htmlFor="weight">Weight (in lbs)</label>
               <input type="number" name="weight" id="weight" min="0" max="200" onChange={selectWeight}/>
             </div>
             <div>

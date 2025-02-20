@@ -75,7 +75,7 @@ function Home() {
               </div>
               <div className={styles["fact-details"]}>
                 <p>Weight</p>
-                <p>{weight}</p>
+                <p>{weight} lbs</p>
               </div>
             </div>
             {/* fact container */}
