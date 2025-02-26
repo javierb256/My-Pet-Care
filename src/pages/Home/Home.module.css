@@ -97,6 +97,11 @@
   background-color: var(--light-gray);
 }
 
+.home-pet-facts h3 {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
 .home-pet,
 .home-pet-facts {
   z-index: 5;
@@ -191,6 +196,17 @@
 @media screen and (max-width: 650px) {
   .home-section h2 {
     font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 550px){
+  .pet-fact-flex{
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .pet-fact-container{
+    max-width: 80px;
   }
 }
 
