@@ -13,12 +13,12 @@ import { useLocation } from "react-router";
 
 function Home() {
   const location = useLocation();
-  const petName = location.state.name;
-  const imgUrl = location.state.imageUrl;
-  const gender = location.state.gender;
-  const species = location.state.species;
-  const weight = location.state.weight;
-  const age = location.state.age;
+  const petName = location.state ? location.state.name : "";
+  const imgUrl = location.state ? location.state.imageUrl : "";
+  const gender = location.state ? location.state.gender : "";
+  const species = location.state ? location.state.species : "";
+  const weight = location.state ? location.state.weight : "";
+  const age = location.state ? location.state.age : "";
 
   return (
     <>

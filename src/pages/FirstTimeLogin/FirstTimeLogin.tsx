@@ -146,7 +146,6 @@ function FirstTimeLogin() {
                 <option value="Bird">Bird</option>
                 <option value="Fish">Fish</option>
                 <option value="Reptile">Reptile</option>
-                <option value="Small Mammal">Small Mammal</option>
               </select>
             </div>
             <div>
