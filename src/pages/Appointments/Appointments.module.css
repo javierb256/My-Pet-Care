@@ -1,0 +1,77 @@
+.header1 {
+  font-size: 2.5rem;
+}
+
+.box {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.appointment-header {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: var(--blue-background);
+  color: white;
+  font-size: 1.5rem;
+}
+
+.appointment-form {
+  /* background-color: red; */
+  max-width: 400px;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.appointment-form > div {
+  display: flex;
+}
+
+.appointment-form label {
+  font-family: raleWayBold;
+  width: 150px;
+  display: inline-block;
+  align-self: center;
+  font-size: 1.2rem;
+}
+
+.appointment-form input {
+  line-height: 25px;
+}
+
+.appointment-form select {
+  height: 27px;
+}
+
+.appointment-form input,
+.appointment-form select {
+  flex-grow: 1;
+}
+
+.button {
+  display: block;
+  font-family: raleWayBold;
+  padding: 0.5rem 0;
+  width: 180px;
+  text-align: center;
+  border-radius: 9px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.break {
+    border: none;
+    height: 1px;
+    /* color: var(--gr); */
+    background-color: red;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    /* height: 100px; */
+}
