@@ -52,6 +52,10 @@
   flex-grow: 1;
 }
 
+.half-inputs input{
+  width: 90%;
+}
+
 .button {
   display: block;
   font-family: raleWayBold;
@@ -74,4 +78,82 @@
     margin-top: 3rem;
     margin-bottom: 3rem;
     /* height: 100px; */
+}
+
+@media screen and (max-width: 900px){
+  .appointment-form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .appointment-form {
+    max-width: 370px;
+    padding: 0 1.5rem;
+  }
+
+  .appointment-form label{
+    font-size: 1rem;
+  }
+
+  .appointment-form input {
+    line-height: 20px;
+  }
+
+  .appointment-form select {
+    height: 25px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 375px){
+  .header1 {
+    font-size: 1.8rem;
+  }
+
+  .appointment-header {
+    font-size: 1.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .half-inputs {
+    width: 100%;
+  }
+
+  .half-inputs div {
+    width: 52%;
+  }
+
+  .half-inputs input {
+    font-size: 14px;
+  }
+
+  .appointment-form input[type=date] {
+    font-size: 12px;
+  }
+
+  .button {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 288px){
+
+  .input {
+    font-size: .8rem;
+  }
+  .appointment-form label {
+    font-size: .9rem;
+  }
+
+  .appointment-form input[type=date]{
+    font-size: 11px;
+  }
+
+  .appointment-form select {
+    height: 23px;
+    font-size: 13px;
+  }
+
+
 }
