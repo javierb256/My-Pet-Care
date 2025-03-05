@@ -50,7 +50,30 @@ function Appointments() {
                 <button type="submit" className={styles.button}>Create Appointment</button>
             </form>
         </BoxContainer>
-        {/* <hr className={styles.break}/> */}
+        <hr className={styles.break}/>
+        <div className={styles.appointments}>
+            {/* using a map populate page with an appointment every time the create appointment form is submitted */}
+            <BoxContainer className={`${styles.box} margin-top-2`}>
+                <h3 className={styles["appointment-header"]}>Appointment #</h3>
+                <div className={styles["appointment-details"]}>
+                    <div className={styles["appointment-content"]}>
+                        <p className={styles.label}>Type:</p><span>Vet</span>
+                    </div>
+                    <div className={styles["appointment-content"]}>
+                        <p className={styles.label}>Time:</p><span>10:00AM</span>
+                    </div>
+                    <div className={styles["appointment-content"]}>
+                        <p className={styles.label}>Date:</p><span>12/10/2024</span>
+                    </div>
+                    <div className={styles["appointment-content"]}>
+                        <p className={styles.label}>Location:</p><span>123 Sesame St</span>
+                    </div>
+                </div>
+
+            </BoxContainer>
+           
+        </div>
+        
         </>
     )
 }
