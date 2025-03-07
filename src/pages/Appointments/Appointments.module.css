@@ -78,29 +78,6 @@
     margin-bottom: 3.5rem;
 }
 
-.appointments {
-  padding-bottom: 2rem;
-}
-
-.appointment-details {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  padding-top: 1.5rem;
-  padding-left: 1.5rem;
-  padding-bottom: 1rem;
-}
-
-.appointment-content p{
-  display: inline-block;
-  font-family: raleWayBold;
-  width: 80px;
-}
-
-.appointment-content span {
-  font-family: raleway;
-}
-
 
 @media screen and (max-width: 900px){
   .appointment-form {
