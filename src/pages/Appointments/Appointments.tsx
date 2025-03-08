@@ -1,13 +1,14 @@
-// import styles from "./Appointments.module.css"
 import Navbar from "../../components/Navbar/Navbar";
 import styles from "./Appointments.module.css";
 import BoxContainer from "../../components/BoxContainer/BoxContainer";
-// import Appointment from "../../components/Appointment/Appointment";
+import Appointment from "../../components/Appointment/Appointment";
 import { useState } from "react";
+const appointmentsArray: any = [];
+let id: number = 1;
 
 function Appointments() {
-
   const [appointmentForm, setAppointmentForm] = useState({
+    id: id,
     appointmentType: "",
     time: "",
     date: "",
@@ -17,9 +18,24 @@ function Appointments() {
     zipCode: "",
   });
 
+  const appointmentProp = {
+    id: appointmentForm.id,
+    appointmentType: appointmentForm.appointmentType,
+    time: appointmentForm.time,
+    date: appointmentForm.date,
+    address: appointmentForm.address,
+    city: appointmentForm.city,
+    state: appointmentForm.state,
+    zipCode: appointmentForm.zipCode,
+    // key?:number
+  };
+
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
+    id++;
     setAppointmentForm({
+      // id: appointmentsArray.length==0 ? 1 : appointmentsArray.length,
+      id: id,
       appointmentType: "",
       time: "",
       date: "",
@@ -28,6 +44,8 @@ function Appointments() {
       state: "",
       zipCode: "",
     });
+    console.log(appointmentsArray.length);
+    appointmentsArray.push(<Appointment key={id} {...appointmentProp} />);
   };
 
   const handleChange = (
@@ -60,7 +78,7 @@ function Appointments() {
               value={appointmentForm.appointmentType}
               onChange={handleChange}
             >
-              <option value="" ></option>
+              <option value=""></option>
               <option value="vet">Vet</option>
               <option value="dentist">Dentist</option>
             </select>
@@ -141,6 +159,7 @@ function Appointments() {
       <hr className={styles.break} />
       <div className={styles.appointments}>
         {/* using a map populate page with an appointment every time the create appointment form is submitted */}
+        {appointmentsArray}
       </div>
     </>
   );

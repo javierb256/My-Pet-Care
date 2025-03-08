@@ -2,42 +2,62 @@ import styles from "./Appointment.module.css";
 import BoxContainer from "../BoxContainer/BoxContainer";
 
 type AppointmentDetail = {
-    appointmentType:string, 
-    time:string, 
-    date:string, 
-    address?:string, 
-    city?:string, 
-    state?:string, 
-    zipCode?:string, 
-    key?:number
-}
+  id: number;
+  appointmentType: string;
+  time: string;
+  date: string;
+  address?: string;
+  city?: string;
+  state?: string;
+  zipCode?: string;
+};
 
-function Appointment(appointment:AppointmentDetail){
-// function Appointment(appointment:AppointmentDetail){
-// function Appointment({type, time, date, address, city, state, zipCode, key}){
-    return (
-        <>
-        <BoxContainer className={`${styles.box} margin-top-2`}>
-                <h3 className={styles["appointment-header"]}>Appointment #{appointment.key}</h3>
-                <div className={styles["appointment-details"]}>
-                    <div className={styles["appointment-content"]}>
-                        <p className={styles.label}>Type:</p><span>{appointment.appointmentType}</span>
-                    </div>
-                    <div className={styles["appointment-content"]}>
-                        <p className={styles.label}>Time:</p><span>{appointment.time}</span>
-                    </div>
-                    <div className={styles["appointment-content"]}>
-                        <p className={styles.label}>Date:</p><span>{appointment.date}</span>
-                    </div>
-                    <div className={styles["appointment-content"]}>
-                        <p className={styles.label}>Location:</p><span>{appointment.address}</span>
-                    </div>
-                </div>
-
-            </BoxContainer>
-        </>
-    )
-    
+function Appointment(appointment: AppointmentDetail) {
+  return (
+    <>
+      <BoxContainer className={`${styles.box} margin-top-2`}>
+        <h3 className={styles["appointment-header"]}>
+          Appointment #{appointment.id}
+        </h3>
+        <div className={styles["appointment-details"]}>
+          <div className={styles["appointment-content"]}>
+            <p className={styles.label}>Type:</p>
+            <span>{appointment.appointmentType}</span>
+          </div>
+          <div className={styles["appointment-content"]}>
+            <p className={styles.label}>Time:</p>
+            <span>{appointment.time}</span>
+          </div>
+          <div className={styles["appointment-content"]}>
+            <p className={styles.label}>Date:</p>
+            <span>{appointment.date}</span>
+          </div>
+          <div className={styles["appointment-content"]}>
+            <p className={styles.label}>Location:</p>
+            <span>{appointment.address}</span>
+          </div>
+          {appointment.city && (
+            <div className={styles["appointment-content"]}>
+              <p className={styles.label}>City:</p>
+              <span>{appointment.city}</span>
+            </div>
+          )}
+          {appointment.state && (
+            <div className={styles["appointment-content"]}>
+              <p className={styles.label}>State:</p>
+              <span>{appointment.state}</span>
+            </div>
+          )}
+          {appointment.zipCode && (
+            <div className={styles["appointment-content"]}>
+              <p className={styles.label}>ZipCode:</p>
+              <span>{appointment.zipCode}</span>
+            </div>
+          )}
+        </div>
+      </BoxContainer>
+    </>
+  );
 }
 
 export default Appointment;

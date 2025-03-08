@@ -78,6 +78,9 @@
     margin-bottom: 3.5rem;
 }
 
+.appointments {
+  padding-bottom: 2rem;
+}
 
 @media screen and (max-width: 900px){
   .appointment-form {

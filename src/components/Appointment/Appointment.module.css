@@ -1,23 +1,46 @@
+.box {
+  max-width: 500px;
+  width: 90%;
+  margin: 2.5rem auto;
+}
+
 .appointments {
-    padding-bottom: 2rem;
-  }
-  
-  .appointment-details {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-    padding-top: 1.5rem;
-    padding-left: 1.5rem;
-    padding-bottom: 1rem;
-  }
-  
-  .appointment-content p{
-    display: inline-block;
-    font-family: raleWayBold;
-    width: 80px;
-  }
-  
-  .appointment-content span {
-    font-family: raleway;
-  }
-  
+  padding-bottom: 2rem;
+}
+
+.appointment-header {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: var(--blue-background);
+  color: white;
+  font-size: 1.5rem;
+}
+
+.appointment-form {
+  max-width: 400px;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.appointment-details {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.appointment-content p {
+  display: inline-block;
+  font-family: raleWayBold;
+  width: 80px;
+}
+
+.appointment-content span {
+  font-family: raleway;
+}
