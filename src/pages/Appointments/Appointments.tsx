@@ -27,7 +27,6 @@ function Appointments() {
     city: appointmentForm.city,
     state: appointmentForm.state,
     zipCode: appointmentForm.zipCode,
-    // key?:number
   };
 
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
@@ -44,7 +43,6 @@ function Appointments() {
       state: "",
       zipCode: "",
     });
-    console.log(appointmentsArray.length);
     appointmentsArray.push(<Appointment key={id} {...appointmentProp} />);
   };
 
