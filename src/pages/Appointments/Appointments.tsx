@@ -77,8 +77,12 @@ function Appointments() {
               onChange={handleChange}
             >
               <option value=""></option>
-              <option value="vet">Vet</option>
-              <option value="dentist">Dentist</option>
+              <option value="vet">Checkup</option>
+              <option value="dental care">Dental Care</option>
+              <option value="vaccination">Vaccination</option>
+              <option value="grooming">Grooming</option>
+              <option value="nail trim">Nail Trim</option>
+              <option value="surgery">Surgery</option>
             </select>
           </div>
           <div>
@@ -155,10 +159,7 @@ function Appointments() {
         </form>
       </BoxContainer>
       <hr className={styles.break} />
-      <div className={styles.appointments}>
-        {/* using a map populate page with an appointment every time the create appointment form is submitted */}
-        {appointmentsArray}
-      </div>
+      <div className={styles.appointments}>{appointmentsArray}</div>
     </>
   );
 }
