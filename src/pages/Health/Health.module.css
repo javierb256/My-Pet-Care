@@ -1,0 +1,33 @@
+.header1 {
+    font-size: 2.5rem;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.health-box {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    gap: 20px;
+}
+
+.health-box p {
+    font-size: 1.5rem;
+}
+
+.image-box {
+    /* border-left: 1px solid black; */
+    /* border-right: 1px solid black; */
+    border: 1px solid black;
+    border-bottom: none;
+    /* border-top: 1px solid black; */
+    width: 60px;
+    height: 60px;
+
+}
