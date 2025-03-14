@@ -77,7 +77,7 @@ function Appointments() {
               onChange={handleChange}
             >
               <option value=""></option>
-              <option value="vet">Checkup</option>
+              <option value="checkup">Checkup</option>
               <option value="dental care">Dental Care</option>
               <option value="vaccination">Vaccination</option>
               <option value="grooming">Grooming</option>
