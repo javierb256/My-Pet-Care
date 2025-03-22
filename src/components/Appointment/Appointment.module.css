@@ -3,14 +3,36 @@
   width: 90%;
   margin: 2.5rem auto;
 }
+.header {
+  display: flex;
+  position: relative;
+  background-color: var(--blue-background);
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+
+.header button {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding: 0;
+  padding-right: .7rem;
+  position: absolute;
+  right: 0;
+  border: none;
+  background: none;
+  font-size: 1.7rem;
+  font-family: raleWayBold;
+}
 
 .appointments {
   padding-bottom: 2rem;
 }
 
+
 .appointment-header {
   text-align: center;
-  padding: 1.5rem 0;
   background-color: var(--blue-background);
   color: white;
   font-size: 1.5rem;

@@ -3,10 +3,11 @@ import styles from "./Appointments.module.css";
 import BoxContainer from "../../components/BoxContainer/BoxContainer";
 import Appointment from "../../components/Appointment/Appointment";
 import { useState } from "react";
-const appointmentsArray: any = [];
+// const appointmentsArray: any = [];
 let id: number = 1;
 
 function Appointments() {
+  const [appointmentsArray, setAppointmentsArray] = useState<any>([]);
   const [appointmentForm, setAppointmentForm] = useState({
     id: id,
     appointmentType: "",
@@ -43,7 +44,14 @@ function Appointments() {
       state: "",
       zipCode: "",
     });
-    appointmentsArray.push(<Appointment key={id} {...appointmentProp} />);
+    setAppointmentsArray((prev:any) => [
+      ...prev,
+      // appointmentProp
+      <Appointment key={id} {...appointmentProp}/>
+    ]);
+    console.log(appointmentsArray)
+    // appointmentsArray.push(<Appointment key={id} {...appointmentProp} />);
+    // setAppointmentsArray([...appointmentsArray, (<Appointment key={id} {...appointmentProp} )]);
   };
 
   const handleChange = (
@@ -57,6 +65,10 @@ function Appointments() {
       [name]: value,
     }));
   };
+
+  // const removeAppointment = (id:string ) => {
+  //   // return setAppointmentsArray(appointmentsArray.filter(appointment => appointment.id !== id));
+  // };
 
   return (
     <>
@@ -160,6 +172,7 @@ function Appointments() {
       </BoxContainer>
       <hr className={styles.break} />
       <div className={styles.appointments}>{appointmentsArray}</div>
+      
     </>
   );
 }

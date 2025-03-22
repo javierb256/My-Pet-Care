@@ -16,9 +16,12 @@ function Appointment(appointment: AppointmentDetail) {
   return (
     <>
       <BoxContainer className={`${styles.box} margin-top-2`}>
-        <h3 className={styles["appointment-header"]}>
-          Appointment #{appointment.id}
-        </h3>
+        <header className={styles["header"]}>
+          <h3 className={styles["appointment-header"]}>
+            Appointment #{appointment.id}
+          </h3>
+          <button>x</button>
+        </header>
         <div className={styles["appointment-details"]}>
           <div className={styles["appointment-content"]}>
             <p className={styles.label}>Type:</p>
