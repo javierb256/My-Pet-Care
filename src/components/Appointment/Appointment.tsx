@@ -10,51 +10,55 @@ type AppointmentDetail = {
   city?: string;
   state?: string;
   zipCode?: string;
+  deleteAppointment: any
 };
 
-function Appointment(appointment: AppointmentDetail) {
+// function Appointment(appointment: AppointmentDetail) {
+// function Appointment({id, appointmentType, time, date, address, city, state, zipCode, deleteAppointment}: AppointmentDetail) {
+function Appointment(props: AppointmentDetail) {
+  const {id, appointmentType, time, date, address, city, state, zipCode, deleteAppointment} = props;
   return (
     <>
       <BoxContainer className={`${styles.box} margin-top-2`}>
         <header className={styles["header"]}>
           <h3 className={styles["appointment-header"]}>
-            Appointment #{appointment.id}
+            Appointment #{id}
           </h3>
-          <button>x</button>
+          <button onClick={()=> deleteAppointment(id)}>x</button>
         </header>
         <div className={styles["appointment-details"]}>
           <div className={styles["appointment-content"]}>
             <p className={styles.label}>Type:</p>
-            <span>{appointment.appointmentType}</span>
+            <span>{appointmentType}</span>
           </div>
           <div className={styles["appointment-content"]}>
             <p className={styles.label}>Time:</p>
-            <span>{appointment.time}</span>
+            <span>{time}</span>
           </div>
           <div className={styles["appointment-content"]}>
             <p className={styles.label}>Date:</p>
-            <span>{appointment.date}</span>
+            <span>{date}</span>
           </div>
           <div className={styles["appointment-content"]}>
             <p className={styles.label}>Location:</p>
-            <span>{appointment.address}</span>
+            <span>{address}</span>
           </div>
-          {appointment.city && (
+          {city && (
             <div className={styles["appointment-content"]}>
               <p className={styles.label}>City:</p>
-              <span>{appointment.city}</span>
+              <span>{city}</span>
             </div>
           )}
-          {appointment.state && (
+          {state && (
             <div className={styles["appointment-content"]}>
               <p className={styles.label}>State:</p>
-              <span>{appointment.state}</span>
+              <span>{state}</span>
             </div>
           )}
-          {appointment.zipCode && (
+          {zipCode && (
             <div className={styles["appointment-content"]}>
               <p className={styles.label}>ZipCode:</p>
-              <span>{appointment.zipCode}</span>
+              <span>{zipCode}</span>
             </div>
           )}
         </div>
