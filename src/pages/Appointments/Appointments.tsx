@@ -2,18 +2,13 @@ import Navbar from "../../components/Navbar/Navbar";
 import styles from "./Appointments.module.css";
 import BoxContainer from "../../components/BoxContainer/BoxContainer";
 import Appointment from "../../components/Appointment/Appointment";
-import { useState} from "react";
-import uuid from 'react-uuid';
+import { useState } from "react";
+import uuid from "react-uuid";
 
-// change id system
 function Appointments() {
-  // let appointmentId:number = 1;
-  const [appointmentId, setAppointmentId] = useState(1)
   const [appointmentsArray, setAppointmentsArray] = useState<any>([]);
-  const [newUuid, setNewUuid] = useState(uuid());
   const [appointmentForm, setAppointmentForm] = useState({
-    // id: newUuid,
-    id: appointmentId,
+
     appointmentType: "",
     time: "",
     date: "",
@@ -21,41 +16,15 @@ function Appointments() {
     city: "",
     state: "",
     zipCode: "",
-    key: "",
   });
 
-
-  const deleteAppointment = (removeId:number) => {
-    // return setAppointmentsArray(appointmentsArray.filter(appointment => appointment.id !== id));
-    // const test = appointmentsArray.filter(appointment => appointment.id != id)
-    // setAppointmentsArray(test)
-
-    // appointmentId--;
-    setAppointmentId(appointmentId => appointmentId-1)
-    // console.log(appointmentsArray)
-    // appointmentsArray.forEach((element:any) => console.log(element.props.id))
-    // appointmentsArray.forEach((appointment:any) => console.log(appointment.id))
-    // const newAppointments: any[] = appointmentsArray.filter((appointment: any) => appointment.id !== removeId)
-    
-    // const newAppointments: any[] = appointmentsArray.filter((appointment: any) => {
-    //   console.log(appointment.id)
-    //   return appointment.id !== removeId
-    // })
-    
-    // appointmentsArray.forEach((element:any) => console.log(element))
-    appointmentsArray.forEach((element:any) => console.log(`current id: ${element.props.id}, deleteId: ${removeId}`, element.props.id === removeId))
-    // const newAppointments: any[] = appointmentsArray.filter((appointment: any) => appointment.props.id != removeId)
-    
-    // const newAppointments: any[] = appointmentsArray.filter((appointment: any) => {
-    //   console.log(appointmentsArray)
-    //   return appointment.props.id != removeId
-    // })
-    // setAppointmentsArray(newAppointments)
-    // console.log(appointmentsArray)
+  const deleteAppointment = (removeId: number) => {
+    setAppointmentsArray((prevItems: any) =>
+      prevItems.filter((_: any, index: number) => index !== removeId)
+    );
   };
-  
+
   const appointmentProp = {
-    id: appointmentId,
     appointmentType: appointmentForm.appointmentType,
     time: appointmentForm.time,
     date: appointmentForm.date,
@@ -65,22 +34,14 @@ function Appointments() {
     zipCode: appointmentForm.zipCode,
     deleteAppointment: deleteAppointment,
   };
-  
 
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // appointmentId = appointmentId +1
-    setNewUuid(uuid())
-    setAppointmentId(appointmentId => appointmentId +1)
-    // console.log("added new appointment")
-    setAppointmentsArray((prev: any) => [
-      ...prev,
-      <Appointment key={newUuid} {...appointmentProp}/>,
-    ]);
-    // console.log(appointmentsArray)
+    setAppointmentsArray((prevItems: any) => {
+      const newAppointment: any = [...prevItems, appointmentProp];
+      return newAppointment;
+    });
     setAppointmentForm({
-      // id: appointmentsArray.length==0 ? 1 : appointmentsArray.length,
-      id: appointmentId,
       appointmentType: "",
       time: "",
       date: "",
@@ -88,10 +49,7 @@ function Appointments() {
       city: "",
       state: "",
       zipCode: "",
-      key: ""
     });
-    // appointmentsArray.push(<Appointment key={id} {...appointmentProp} />);
-    // setAppointmentsArray([...appointmentsArray, (<Appointment key={id} {...appointmentProp} )]);
   };
 
   const handleChange = (
@@ -105,8 +63,6 @@ function Appointments() {
       [name]: value,
     }));
   };
-
- 
 
   return (
     <>
@@ -185,7 +141,7 @@ function Appointments() {
               <input
                 type="text"
                 id="state"
-                name="stFavorite Songsate"
+                name="state"
                 className="input"
                 value={appointmentForm.state}
                 onChange={handleChange}
@@ -209,15 +165,18 @@ function Appointments() {
         </form>
       </BoxContainer>
       <hr className={styles.break} />
-      {/* <div className={styles.appointments}>{appointmentsArray}</div> */}
-      
+
       <div className={styles.appointments}>
-        {/* {appointmentsArray} */}
-        {appointmentsArray.map((appointment:any) => {
-          return appointment
-        })
-        
-        }
+        {appointmentsArray.map((appointment: any, index: number) => {
+          const key = uuid();
+          return (
+            <Appointment
+              key={key}
+              id={index}
+              {...appointment}
+            />
+          );
+        })}
       </div>
     </>
   );

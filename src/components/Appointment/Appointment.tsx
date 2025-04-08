@@ -10,21 +10,30 @@ type AppointmentDetail = {
   city?: string;
   state?: string;
   zipCode?: string;
-  deleteAppointment: any
+  appointmentNumber?: number;
+  deleteAppointment: any;
 };
 
-// function Appointment(appointment: AppointmentDetail) {
-// function Appointment({id, appointmentType, time, date, address, city, state, zipCode, deleteAppointment}: AppointmentDetail) {
 function Appointment(props: AppointmentDetail) {
-  const {id, appointmentType, time, date, address, city, state, zipCode, deleteAppointment} = props;
+  const {
+    id,
+    appointmentType,
+    time,
+    date,
+    address,
+    city,
+    state,
+    zipCode,
+    deleteAppointment,
+  } = props;
   return (
     <>
       <BoxContainer className={`${styles.box} margin-top-2`}>
         <header className={styles["header"]}>
           <h3 className={styles["appointment-header"]}>
-            Appointment #{id}
+            Appointment #{id + 1}
           </h3>
-          <button onClick={()=> deleteAppointment(id)}>x</button>
+          <button onClick={() => deleteAppointment(id)}>x</button>
         </header>
         <div className={styles["appointment-details"]}>
           <div className={styles["appointment-content"]}>
