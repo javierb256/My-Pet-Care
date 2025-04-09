@@ -49,7 +49,7 @@ function Appointment(props: AppointmentDetail) {
             <span>{date}</span>
           </div>
           <div className={styles["appointment-content"]}>
-            <p className={styles.label}>Location:</p>
+            <p className={styles.label}>Address:</p>
             <span>{address}</span>
           </div>
           {city && (

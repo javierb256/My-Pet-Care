@@ -18,6 +18,39 @@ function Appointments() {
     zipCode: "",
   });
 
+  const formatDate = (date:string) => {
+    const newDate = new Date(date);
+    const format = newDate.toLocaleDateString('en-US', {
+      day: "numeric",
+      month: "long",
+      year: "numeric"
+    });
+    return format
+  }
+
+  const formatTime = (time:string) => {
+    const oldTime: string[] = time.split(":")
+    const hour:string = oldTime[0];
+    const minute:string = oldTime[1];
+
+    if(/00/.test(hour) == true){
+      return `12:${minute} AM`      
+    }
+
+    else if(Number(hour) <12){
+      return `${hour}:${minute} AM`
+    }
+
+    else if(Number(hour) == 12){
+      return `${hour}:${minute} PM`
+    }
+
+    else {
+      return `${Number(hour)-12}:${minute} PM`;
+    }
+
+  }
+
   const deleteAppointment = (removeId: number) => {
     setAppointmentsArray((prevItems: any) =>
       prevItems.filter((_: any, index: number) => index !== removeId)
@@ -26,8 +59,8 @@ function Appointments() {
 
   const appointmentProp = {
     appointmentType: appointmentForm.appointmentType,
-    time: appointmentForm.time,
-    date: appointmentForm.date,
+    time: formatTime(appointmentForm.time),
+    date: formatDate(appointmentForm.date),
     address: appointmentForm.address,
     city: appointmentForm.city,
     state: appointmentForm.state,
@@ -81,14 +114,15 @@ function Appointments() {
               className="input"
               value={appointmentForm.appointmentType}
               onChange={handleChange}
+              required
             >
               <option value=""></option>
-              <option value="checkup">Checkup</option>
-              <option value="dental care">Dental Care</option>
-              <option value="vaccination">Vaccination</option>
-              <option value="grooming">Grooming</option>
-              <option value="nail trim">Nail Trim</option>
-              <option value="surgery">Surgery</option>
+              <option value="Checkup">Checkup</option>
+              <option value="Dental care">Dental Care</option>
+              <option value="Vaccination">Vaccination</option>
+              <option value="Grooming">Grooming</option>
+              <option value="Nail trim">Nail Trim</option>
+              <option value="Surgery">Surgery</option>
             </select>
           </div>
           <div>
@@ -100,6 +134,7 @@ function Appointments() {
               className="input"
               value={appointmentForm.time}
               onChange={handleChange}
+              required
             />
           </div>
           <div>
@@ -111,6 +146,7 @@ function Appointments() {
               className="input"
               value={appointmentForm.date}
               onChange={handleChange}
+              required
             />
           </div>
           <div>
@@ -156,6 +192,8 @@ function Appointments() {
                 className="input"
                 value={appointmentForm.zipCode}
                 onChange={handleChange}
+                minLength={6}
+                maxLength={6}
               />
             </div>
           </div>
