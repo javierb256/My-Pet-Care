@@ -9,6 +9,7 @@ import pawPrint from "../../assets/paw-icon-2.png";
 import calendarIcon from "../../assets/calendar-regular.svg";
 import stickyNote from "../../assets/sticky-note-white.svg";
 import BoxContainer from "../../components/BoxContainer/BoxContainer";
+import WeightChart from "../../components/WeightChart/WeightChart";
 import { useLocation } from "react-router";
 
 function Home() {
@@ -75,10 +76,7 @@ function Home() {
               </div>
               <div className={styles["fact-details"]}>
                 <p>Weight</p>
-                {weight == "" ? 
-                <p></p> :
-                <p>{weight} lbs</p>
-              }
+                {weight == "" ? <p></p> : <p>{weight} lbs</p>}
               </div>
             </div>
             {/* fact container */}
@@ -104,6 +102,9 @@ function Home() {
             <img src={weightIcon} alt="weight icon" />
           </span>
         </h2>
+        <div className={styles["chart-container"]}>
+          <WeightChart/>
+        </div>
       </section>
       {/* calendar chart */}
       <section className={styles["home-section"]}>
