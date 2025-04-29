@@ -161,16 +161,10 @@
 }
 
 .chart-container {
-  /* background-color: white; */
-  /* width: 60%; */
-  min-height: 400px;
-  height: 600px;
-  max-height: 800px;
-  /* margin: 4rem auto; */
+  max-height: 600px;
   margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 @media screen and (max-width: 969px) {
@@ -193,7 +187,6 @@
   .home-pet-facts {
     width: 85%;
     min-height: 217px;
-    /* height: 217px; */
   }
 
   .pet-fact-container {
@@ -204,6 +197,10 @@
   .pet-fact-flex {
     flex-direction: row;
   }
+
+  .chart-container {
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -212,13 +209,13 @@
   }
 }
 
-@media screen and (max-width: 550px){
-  .pet-fact-flex{
+@media screen and (max-width: 550px) {
+  .pet-fact-flex {
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
   }
-  .pet-fact-container{
+  .pet-fact-container {
     max-width: 80px;
   }
 }

@@ -24,7 +24,8 @@ ChartJS.register(
 
 function WeightChart() {
   const options = {
-   
+   responsive: true,
+   maintainAspectRatio: true
   };
 
   const data = {
