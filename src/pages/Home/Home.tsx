@@ -1,4 +1,5 @@
 import Navbar from "../../components/Navbar/Navbar";
+// import Button from "../../components/Button/Button";
 import styles from "./Home.module.css";
 import tempPetPicture from "../../assets/My Pet Care Logo Blue.png";
 import petKennel from "../../assets/dog-crate-icon-white.png";
@@ -11,6 +12,7 @@ import stickyNote from "../../assets/sticky-note-white.svg";
 import BoxContainer from "../../components/BoxContainer/BoxContainer";
 import WeightChart from "../../components/WeightChart/WeightChart";
 import { useLocation } from "react-router";
+import { useState} from "react";
 
 function Home() {
   const location = useLocation();
@@ -20,6 +22,35 @@ function Home() {
   const species = location.state ? location.state.species : "";
   const weight = location.state ? location.state.weight : "";
   const age = location.state ? location.state.age : "";
+  // const [petWeight, setPetWeight] = useState("")
+  const [weightDataForm, setWeightDataForm] = useState({
+    weight: ""
+  });
+
+  // useEffect(() => {
+
+  // },[weightDataForm])
+
+  // const handleWeightSubmit = (e: React.ChangeEvent<HTMLButtonElement>) => {
+  const handleWeightSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setWeightDataForm({
+      weight: ""
+    })
+    // setPetWeight("")
+    // setWeightDataForm({
+    //   weight: ""
+    // })
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const {name,value} = e.target;
+    setWeightDataForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+    // setPetWeight(value);
+  }
 
   return (
     <>
@@ -103,7 +134,28 @@ function Home() {
           </span>
         </h2>
         <div className={styles["chart-container"]}>
-          <WeightChart/>
+          <WeightChart weight={weightDataForm.weight}/>
+          {/* <WeightChart weight={petWeight}/> */}
+
+          <form
+            className={styles["new-weight-container"]}
+            onSubmit={handleWeightSubmit}
+          >
+            <label>
+              Enter Pet Weight
+              <input
+                type="number"
+                id="weight"
+                name="weight"
+                // value={petWeight}
+                value={weightDataForm.weight}
+                onChange={handleChange}
+                min={1}
+                max={200}
+              />
+            </label>
+            <button type="submit">Add Weight</button>
+          </form>
         </div>
       </section>
       {/* calendar chart */}

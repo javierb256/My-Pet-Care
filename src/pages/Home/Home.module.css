@@ -167,6 +167,39 @@
   margin-right: auto;
 }
 
+.new-weight-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  max-width: 600px;
+  padding: 0.3rem 0.5rem;
+  text-align: center;
+}
+
+.new-weight-container label {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.new-weight-container input {
+  margin-left: 0.5rem;
+  line-height: 25px;
+}
+
+.new-weight-container input,
+.new-weight-container button {
+  display: inline;
+}
+
+.new-weight-container button {
+  margin-top: 0;
+}
+
 @media screen and (max-width: 969px) {
   .home-section {
     padding: 2rem 0;

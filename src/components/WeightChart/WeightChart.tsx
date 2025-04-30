@@ -21,23 +21,40 @@ ChartJS.register(
   Legend,
 );
 
+type Weights = {
+  weight: string,
+}
 
-function WeightChart() {
+
+// function WeightChart(props:Weights) {
+function WeightChart({weight}: Weights) {
   const options = {
    responsive: true,
    maintainAspectRatio: true
   };
+  const test = ["4/29", weight]
+  // const data = {
+
+  //   datasets: [
+  //     {
+  //       label: ` Weight`,
+  //       data: [["4/25", 10], ["4/26", 20], ["4/27", 30], ["4/28", 5]],
+  //       borderColor: "hsl(194, 100%, 46%)",
+  //     },
+  //   ],
+  // };
 
   const data = {
-
     datasets: [
       {
-        label: ` Weight`,
-        data: [["4/25", 10], ["4/26", 20], ["4/27", 30], ["4/28", 5]],
+        label: `Weight`,
+        // data: [["4/25",3]],
+        data: [test],
         borderColor: "hsl(194, 100%, 46%)",
-      },
-    ],
-  };
+      }
+    ]
+  }
+  
   return <Line options={options} data={data} className={styles.chart}/>;
 }
 
