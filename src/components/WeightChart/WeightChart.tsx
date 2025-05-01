@@ -18,21 +18,20 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend,
+  Legend
 );
 
-type Weights = {
-  weight: string,
-}
+// type Weights = {
+//   weight: string,
+// }
 
-
-// function WeightChart(props:Weights) {
-function WeightChart({weight}: Weights) {
+function WeightChart({ weight }: any) {
+  console.log(weight);
   const options = {
-   responsive: true,
-   maintainAspectRatio: true
+    responsive: true,
+    maintainAspectRatio: true,
   };
-  const test = ["4/29", weight]
+  // const test = ["4/29", weight]
   // const data = {
 
   //   datasets: [
@@ -49,14 +48,13 @@ function WeightChart({weight}: Weights) {
       {
         label: `Weight`,
         // data: [["4/25",3]],
-        data: [test],
+        data: weight,
         borderColor: "hsl(194, 100%, 46%)",
-      }
-    ]
-  }
-  
-  return <Line options={options} data={data} className={styles.chart}/>;
-}
+      },
+    ],
+  };
 
+  return <Line options={options} data={data} className={styles.chart} />;
+}
 
 export default WeightChart;

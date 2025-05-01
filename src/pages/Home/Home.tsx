@@ -12,7 +12,7 @@ import stickyNote from "../../assets/sticky-note-white.svg";
 import BoxContainer from "../../components/BoxContainer/BoxContainer";
 import WeightChart from "../../components/WeightChart/WeightChart";
 import { useLocation } from "react-router";
-import { useState} from "react";
+import { useState } from "react";
 
 function Home() {
   const location = useLocation();
@@ -22,35 +22,34 @@ function Home() {
   const species = location.state ? location.state.species : "";
   const weight = location.state ? location.state.weight : "";
   const age = location.state ? location.state.age : "";
-  // const [petWeight, setPetWeight] = useState("")
   const [weightDataForm, setWeightDataForm] = useState({
-    weight: ""
+    weight: "",
   });
+  const [weightArray, setWeightArray] = useState([]);
+  const [date, setDate] = useState(1);
 
-  // useEffect(() => {
-
-  // },[weightDataForm])
-
-  // const handleWeightSubmit = (e: React.ChangeEvent<HTMLButtonElement>) => {
   const handleWeightSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setWeightArray((prevItems: any) => {
+      const newWeights: any = [
+        ...prevItems,
+        [`1/${date}`, weightDataForm.weight],
+      ];
+      return newWeights;
+    });
+    setDate(() => date + 1);
     setWeightDataForm({
-      weight: ""
-    })
-    // setPetWeight("")
-    // setWeightDataForm({
-    //   weight: ""
-    // })
+      weight: "",
+    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {name,value} = e.target;
+    const { name, value } = e.target;
     setWeightDataForm((prev) => ({
       ...prev,
       [name]: value,
-    }))
-    // setPetWeight(value);
-  }
+    }));
+  };
 
   return (
     <>
@@ -134,8 +133,7 @@ function Home() {
           </span>
         </h2>
         <div className={styles["chart-container"]}>
-          <WeightChart weight={weightDataForm.weight}/>
-          {/* <WeightChart weight={petWeight}/> */}
+          <WeightChart weight={weightArray} />
 
           <form
             className={styles["new-weight-container"]}
