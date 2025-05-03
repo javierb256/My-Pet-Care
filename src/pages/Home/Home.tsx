@@ -1,5 +1,4 @@
 import Navbar from "../../components/Navbar/Navbar";
-// import Button from "../../components/Button/Button";
 import styles from "./Home.module.css";
 import tempPetPicture from "../../assets/My Pet Care Logo Blue.png";
 import petKennel from "../../assets/dog-crate-icon-white.png";
@@ -24,22 +23,43 @@ function Home() {
   const age = location.state ? location.state.age : "";
   const [weightDataForm, setWeightDataForm] = useState({
     weight: "",
+    date: "",
   });
   const [weightArray, setWeightArray] = useState([]);
-  const [date, setDate] = useState(1);
+  const [dateArray, setDateArray] = useState([]);
 
-  const handleWeightSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+  const handleChartDataSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setWeightArray((prevItems: any) => {
-      const newWeights: any = [
-        ...prevItems,
-        [`1/${date}`, weightDataForm.weight],
+    // const newDate = new Date(weightDataForm.date);
+
+    // setWeightArray((prevItems: any) => {
+    //   const newData: any = [
+    //     ...prevItems,
+    //     [weightDataForm.date, weightDataForm.weight],
+    //   ];
+    //   return newData;
+    // });
+
+
+    setWeightArray((prevItems:any) => {
+      const newWeight: any = [
+        ...prevItems, weightDataForm.weight
       ];
-      return newWeights;
-    });
-    setDate(() => date + 1);
+      return newWeight;
+    })
+
+    setDateArray((prevItems:any) => {
+      const newDate = new Date(weightDataForm.date)
+      const newDates: any = [
+        ...prevItems, newDate
+        // ...prevItems, formatDate(weightDataForm.weight)
+        // ...prevItems, weightDataForm.date
+      ];
+      return newDates;
+    })
     setWeightDataForm({
       weight: "",
+      date: ""
     });
   };
 
@@ -133,14 +153,14 @@ function Home() {
           </span>
         </h2>
         <div className={styles["chart-container"]}>
-          <WeightChart weight={weightArray} />
+          <WeightChart weights={weightArray} dates={dateArray}/>
 
           <form
             className={styles["new-weight-container"]}
-            onSubmit={handleWeightSubmit}
+            onSubmit={handleChartDataSubmit}
           >
-            <label>
-              Enter Pet Weight
+            <label htmlFor="weight">
+              Enter Pet Weight (lbs)
               <input
                 type="number"
                 id="weight"
@@ -152,7 +172,21 @@ function Home() {
                 max={200}
               />
             </label>
-            <button type="submit">Add Weight</button>
+
+            <label htmlFor="date">
+              Date
+              <input
+                type="date"
+                id="date"
+                name="date"
+                value={weightDataForm.date}
+                onChange={handleChange}
+              />
+            </label>
+            <button className="button" type="submit">
+              Add Weight
+            </button>
+            {/* <button type="submit">Add Weight</button> */}
           </form>
         </div>
       </section>

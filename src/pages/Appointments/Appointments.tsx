@@ -2,6 +2,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import styles from "./Appointments.module.css";
 import BoxContainer from "../../components/BoxContainer/BoxContainer";
 import Appointment from "../../components/Appointment/Appointment";
+import {formatDate} from "../../utilities/utils";
 import { useState } from "react";
 import uuid from "react-uuid";
 
@@ -17,16 +18,6 @@ function Appointments() {
     state: "",
     zipCode: "",
   });
-
-  const formatDate = (date:string) => {
-    const newDate = new Date(date);
-    const format = newDate.toLocaleDateString('en-US', {
-      day: "numeric",
-      month: "long",
-      year: "numeric"
-    });
-    return format
-  }
 
   const formatTime = (time:string) => {
     const oldTime: string[] = time.split(":")

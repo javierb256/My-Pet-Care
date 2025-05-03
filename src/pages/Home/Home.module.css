@@ -178,6 +178,7 @@
   max-width: 600px;
   padding: 0.3rem 0.5rem;
   text-align: center;
+  gap: 15px;
 }
 
 .new-weight-container label {
@@ -198,7 +199,10 @@
 
 .new-weight-container button {
   margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
+
 
 @media screen and (max-width: 969px) {
   .home-section {
