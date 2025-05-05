@@ -25,41 +25,22 @@ function Home() {
     weight: "",
     date: "",
   });
-  const [weightArray, setWeightArray] = useState([]);
-  const [dateArray, setDateArray] = useState([]);
+  const [dataArray, setDataArray] = useState([]);
 
+  //function to pass all chart data collected from form
   const handleChartDataSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // const newDate = new Date(weightDataForm.date);
+    setDataArray((prevItems: any) => {
+      //format date into Date object to allow sorting
+      const newDate = new Date(weightDataForm.date);
+      //chart uses data in the form [date, value]
+      const newData: any = [...prevItems, [newDate, weightDataForm.weight]];
+      return newData;
+    });
 
-    // setWeightArray((prevItems: any) => {
-    //   const newData: any = [
-    //     ...prevItems,
-    //     [weightDataForm.date, weightDataForm.weight],
-    //   ];
-    //   return newData;
-    // });
-
-
-    setWeightArray((prevItems:any) => {
-      const newWeight: any = [
-        ...prevItems, weightDataForm.weight
-      ];
-      return newWeight;
-    })
-
-    setDateArray((prevItems:any) => {
-      const newDate = new Date(weightDataForm.date)
-      const newDates: any = [
-        ...prevItems, newDate
-        // ...prevItems, formatDate(weightDataForm.weight)
-        // ...prevItems, weightDataForm.date
-      ];
-      return newDates;
-    })
     setWeightDataForm({
       weight: "",
-      date: ""
+      date: "",
     });
   };
 
@@ -153,7 +134,7 @@ function Home() {
           </span>
         </h2>
         <div className={styles["chart-container"]}>
-          <WeightChart weights={weightArray} dates={dateArray}/>
+          <WeightChart data={dataArray} petName={petName}/>
 
           <form
             className={styles["new-weight-container"]}
@@ -186,7 +167,6 @@ function Home() {
             <button className="button" type="submit">
               Add Weight
             </button>
-            {/* <button type="submit">Add Weight</button> */}
           </form>
         </div>
       </section>
