@@ -6,9 +6,9 @@ import genderIcon from "../../assets/unisex-symbol-icon-white.png";
 import weightIcon from "../../assets/lbs-measure-weight-icon(1).png";
 import ageIcon from "../../assets/age-icon-white.png";
 import pawPrint from "../../assets/paw-icon-2.png";
-import calendarIcon from "../../assets/calendar-regular.svg";
-import stickyNote from "../../assets/sticky-note-white.svg";
-import BoxContainer from "../../components/BoxContainer/BoxContainer";
+// import calendarIcon from "../../assets/calendar-regular.svg";
+// import stickyNote from "../../assets/sticky-note-white.svg";
+// import BoxContainer from "../../components/BoxContainer/BoxContainer";
 import WeightChart from "../../components/WeightChart/WeightChart";
 import { useLocation } from "react-router";
 import { useState } from "react";
@@ -173,16 +173,16 @@ function Home() {
         </form>
       </section>
       {/* calendar chart */}
-      <section className={styles["home-section"]}>
+      {/* <section className={styles["home-section"]}>
         <h2 className={styles["home"]}>
           Calendar{" "}
           <span>
             <img src={calendarIcon} alt="calendar icon" />
           </span>
         </h2>
-      </section>
+      </section> */}
       {/* Notes chart */}
-      <section className={styles["home-section"]}>
+      {/* <section className={styles["home-section"]}>
         <h2 className={styles["home"]}>
           Notes{" "}
           <span>
@@ -192,7 +192,7 @@ function Home() {
         <BoxContainer className={`${styles.box} margin-top-2`}>
           <h3></h3>
         </BoxContainer>
-      </section>
+      </section> */}
     </>
   );
 }
