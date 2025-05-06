@@ -134,19 +134,19 @@ function Home() {
           </span>
         </h2>
         <div className={styles["chart-container"]}>
-          <WeightChart data={dataArray} petName={petName}/>
-
-          <form
+          <WeightChart data={dataArray} petName={petName} />
+        </div>
+        <form
             className={styles["new-weight-container"]}
             onSubmit={handleChartDataSubmit}
           >
+            <legend>New Weight</legend>
             <label htmlFor="weight">
-              Enter Pet Weight (lbs)
+              Pet Weight (lbs)
               <input
                 type="number"
                 id="weight"
                 name="weight"
-                // value={petWeight}
                 value={weightDataForm.weight}
                 onChange={handleChange}
                 min={1}
@@ -168,7 +168,6 @@ function Home() {
               Add Weight
             </button>
           </form>
-        </div>
       </section>
       {/* calendar chart */}
       <section className={styles["home-section"]}>

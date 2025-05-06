@@ -169,16 +169,20 @@
 
 .new-weight-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  border: 3px solid rgb(197, 197, 197);
   background-color: white;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2rem;
-  max-width: 600px;
-  padding: 0.3rem 0.5rem;
+  max-width: 400px;
+  padding: 0.6rem 0.5rem;
   text-align: center;
   gap: 15px;
+}
+
+.new-weight-container legend {
+  font-size: 2rem;
 }
 
 .new-weight-container label {
@@ -199,8 +203,12 @@
 
 .new-weight-container button {
   margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.new-weight-container label:first-child input{
+  flex-grow: 1;
 }
 
 
@@ -244,6 +252,20 @@
   .home-section h2 {
     font-size: 3rem;
   }
+
+  .new-weight-container {
+    width: 50%;
+  }
+
+  .new-weight-container legend {
+    font-size: 1.6rem;
+  }
+
+  .new-weight-container label {
+    font-size: 1.2rem;
+  }
+
+  
 }
 
 @media screen and (max-width: 550px) {
@@ -283,6 +305,20 @@
   .pet-fact-flex {
     gap: 10px;
   }
+
+  .new-weight-container legend {
+    font-size: 1.4rem;
+  }
+
+  .new-weight-container label {
+    font-size: .9rem;
+  }
+
+  .new-weight-container button[type="submit"] {
+    padding: .3rem 0;
+    font-size: 1.1rem;
+  }
+
 }
 
 @media screen and (max-width: 400px) {
@@ -316,5 +352,15 @@
 
   .pet-fact-flex {
     flex-direction: column;
+  }
+
+  .new-weight-container label {
+    font-size: .8rem;
+  }
+
+  .new-weight-container button[type="submit"] {
+    padding: .3rem 0;
+    font-size: .9rem;
+    width: 70%;
   }
 }

@@ -45,6 +45,7 @@ function WeightChart({ data, petName }: any) {
         label: petName === "" ? `Pet's Weight` : petName + "'s Weight",
         data: sortedData,
         borderColor: "hsl(194, 100%, 46%)",
+        backgroundColor: "hsl(193, 100.00%, 81.80%)"
       },
     ],
   };
