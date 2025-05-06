@@ -33,6 +33,9 @@ function Home() {
     setDataArray((prevItems: any) => {
       //format date into Date object to allow sorting
       const newDate = new Date(weightDataForm.date);
+      //corrects date timezone offset with current minutes to prevent off by 1 date
+      newDate.setMinutes(newDate.getMinutes() + newDate.getTimezoneOffset());
+
       //chart uses data in the form [date, value]
       const newData: any = [...prevItems, [newDate, weightDataForm.weight]];
       return newData;
@@ -137,37 +140,37 @@ function Home() {
           <WeightChart data={dataArray} petName={petName} />
         </div>
         <form
-            className={styles["new-weight-container"]}
-            onSubmit={handleChartDataSubmit}
-          >
-            <legend>New Weight</legend>
-            <label htmlFor="weight">
-              Pet Weight (lbs)
-              <input
-                type="number"
-                id="weight"
-                name="weight"
-                value={weightDataForm.weight}
-                onChange={handleChange}
-                min={1}
-                max={200}
-              />
-            </label>
+          className={styles["new-weight-container"]}
+          onSubmit={handleChartDataSubmit}
+        >
+          <legend>New Weight</legend>
+          <label htmlFor="weight">
+            Pet Weight (lbs)
+            <input
+              type="number"
+              id="weight"
+              name="weight"
+              value={weightDataForm.weight}
+              onChange={handleChange}
+              min={1}
+              max={200}
+            />
+          </label>
 
-            <label htmlFor="date">
-              Date
-              <input
-                type="date"
-                id="date"
-                name="date"
-                value={weightDataForm.date}
-                onChange={handleChange}
-              />
-            </label>
-            <button className="button" type="submit">
-              Add Weight
-            </button>
-          </form>
+          <label htmlFor="date">
+            Date
+            <input
+              type="date"
+              id="date"
+              name="date"
+              value={weightDataForm.date}
+              onChange={handleChange}
+            />
+          </label>
+          <button className="button" type="submit">
+            Add Weight
+          </button>
+        </form>
       </section>
       {/* calendar chart */}
       <section className={styles["home-section"]}>
