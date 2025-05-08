@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { BrowserRouter, Routes, Route } from 'react-router'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router'
 import App from './App.tsx'
 import Appointments from './pages/Appointments/Appointments.tsx'
 import CreateAccount from './pages/CreateAccount/CreateAccount.tsx'
@@ -23,7 +23,7 @@ createRoot(document.getElementById('root')!).render(
       <Route path="appointments" element={<Appointments />}/>
       <Route path="create-account/confirmation" element={<Confirmation />}/>
       <Route path="account-recovery" element={<AccountRecovery />}/>
-      <Route path="*" ></Route>
+      <Route path="*" element={<Navigate to="/"/>}></Route>
     </Routes>
     </BrowserRouter>
   </StrictMode>,
