@@ -13,7 +13,7 @@ import Confirmation from './pages/Confirmation/Confirmation.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter basename='My-Pet-Care'>
+    <BrowserRouter basename='my-pet-care'>
     <Routes>
       <Route path="/" element={<App />}/>
       <Route path="home" element={<Home />}/>
