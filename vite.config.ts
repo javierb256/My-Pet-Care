@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // base: "/",
-  base: "/my-pet-care",
+  // base: "/my-pet-care",
   // base: process.env.VITE_BASE_PATH || "/My-Pet-Care",
   // base: import.meta.env.VITE_BASE_PATH || "/My-Pet-Care",
 })
