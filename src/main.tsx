@@ -24,7 +24,7 @@ createRoot(document.getElementById('root')!).render(
       <Route path="appointments" element={<Appointments />}/>
       <Route path="create-account/confirmation" element={<Confirmation />}/>
       <Route path="account-recovery" element={<AccountRecovery />}/>
-      <Route element={<NotFound />}></Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
     </BrowserRouter>
   </StrictMode>,
