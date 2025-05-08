@@ -2,7 +2,6 @@
   "name": "my-pet-care",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://javierb256.github.io/My-Pet-Care/",
   "type": "module",
   "scripts": {
     "dev": "vite",
