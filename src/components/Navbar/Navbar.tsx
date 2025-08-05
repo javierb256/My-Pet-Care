@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import Logo from "../../assets/My Pet Care Logo Blue.png";
 import logoTransparent from "../../assets/My Pet Care Logo Blue Transparent.png";
 import ProfileIcon from "../../assets/user-profile-icon.svg";
-import DownArrow from "../../assets/thin-chevron-arrow-bottom-icon.svg";
+// import DownArrow from "../../assets/thin-chevron-arrow-bottom-icon.svg";
 import LinkButton from "../LinkButton/LinkButton";
 import { useState } from "react";
 import { useRef } from "react";
@@ -44,12 +44,20 @@ function Navbar() {
           </li>
         </ul>
         <div className={styles["profile-options"]}>
-          <img src={DownArrow} alt="down arrow" />
-          <img
+          {/* <img src={DownArrow} alt="down arrow" /> */}
+          {/* <img
             src={ProfileIcon}
             className={styles["navbar-image"]}
             alt="stock profile picture"
-          />
+          /> */}
+          <div className={styles["profile-dropdown"]}>
+            <div className={styles["profile-dropdown-user"]}>
+              <img src={ProfileIcon}/>
+              {/* <div>
+                <p>Username</p>
+              </div> */}
+            </div>
+          </div>
         </div>
       </div>
       <div className={styles["navbar-mobile"]}>
