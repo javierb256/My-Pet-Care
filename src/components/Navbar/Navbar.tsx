@@ -1,10 +1,12 @@
 import styles from "./Navbar.module.css";
-import { Link } from "react-router";
 import Logo from "../../assets/My Pet Care Logo Blue.png";
 import logoTransparent from "../../assets/My Pet Care Logo Blue Transparent.png";
 import ProfileIcon from "../../assets/user-profile-icon.svg";
-// import DownArrow from "../../assets/thin-chevron-arrow-bottom-icon.svg";
+import SimpleProfileIcon from "../../assets/profile-1335-svgrepo-com.svg";
+import Gears from "../../assets/gear-settings-svgrepo-com.svg";
+import SignOutIcon from "../../assets/sign-out-left-3-svgrepo-com.svg";
 import LinkButton from "../LinkButton/LinkButton";
+import { Link } from "react-router";
 import { useState } from "react";
 import { useRef } from "react";
 
@@ -54,6 +56,25 @@ function Navbar() {
             alt="stock profile picture"
           />
         </button>
+        {profileDropDownActive ? 
+        <div className={styles["profile-dropdown"]}>
+            <div className={styles["profile-dropdown-user"]}>
+              <img src={ProfileIcon}/>
+              <div>
+                <p>Username</p>
+              </div>
+            </div>
+            <hr></hr>
+            <ul className={styles["dropdown-options"]}>
+              <li><img src={SimpleProfileIcon}/> Your Profile</li>
+              <li><img src={Gears}/> Settings</li>
+              <li><img src={SignOutIcon}/> Sign Out</li>
+            </ul>
+          </div>
+        
+         :
+        null  
+      }
 
         {/* <div className={styles["profile-options"]} >
           <img
@@ -61,15 +82,7 @@ function Navbar() {
             className={styles["navbar-image"]}
             alt="stock profile picture"
           />
-          <div className={styles["profile-dropdown"]}>
-            <div className={styles["profile-dropdown-user"]}>
-              <img src={ProfileIcon}/>
-              <div>
-                <p>Username</p>
-              </div>
-            </div>
-          </div>
-        </div> */}
+          */}
       </div>
       <div className={styles["navbar-mobile"]}>
         <div className={styles["navbar-mobile-bar"]}>
