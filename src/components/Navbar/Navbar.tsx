@@ -18,7 +18,8 @@ function Navbar() {
     bottomDiv.current!.classList.toggle(styles.active);
     middleDiv.current!.classList.toggle(styles.active);
     setMenuOpen(!menuOpen);
-  }
+  };
+  const [profileDropDownActive, setProfileDropDownActive] = useState(false);
 
   return (
     <>
@@ -43,22 +44,32 @@ function Navbar() {
             <Link to={"/appointments"}>Appointments</Link>
           </li>
         </ul>
-        <div className={styles["profile-options"]}>
-          {/* <img src={DownArrow} alt="down arrow" /> */}
-          {/* <img
+        <button
+          onClick={() => setProfileDropDownActive(!profileDropDownActive)}
+          className={styles["navbar-profile-button"]}
+        >
+          <img
             src={ProfileIcon}
             className={styles["navbar-image"]}
             alt="stock profile picture"
-          /> */}
+          />
+        </button>
+
+        {/* <div className={styles["profile-options"]} >
+          <img
+            src={ProfileIcon}
+            className={styles["navbar-image"]}
+            alt="stock profile picture"
+          />
           <div className={styles["profile-dropdown"]}>
             <div className={styles["profile-dropdown-user"]}>
               <img src={ProfileIcon}/>
-              {/* <div>
+              <div>
                 <p>Username</p>
-              </div> */}
+              </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className={styles["navbar-mobile"]}>
         <div className={styles["navbar-mobile-bar"]}>
@@ -87,7 +98,9 @@ function Navbar() {
               <Link to={"/appointments"}>Appointments</Link>
             </li>
           </ul>
-          <LinkButton to="/" className={styles["link-button"]}>Log Out</LinkButton>
+          <LinkButton to="/" className={styles["link-button"]}>
+            Log Out
+          </LinkButton>
         </div>
       </div>
     </>

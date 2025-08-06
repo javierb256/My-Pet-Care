@@ -56,9 +56,23 @@
   }
   
   .navbar-links li:not(:first-child):hover a {
-    color: var(--blue-background);
+    color: var(--blue-background);  
     font-weight: bold;
     font-size: 1.5rem;
+  }
+
+  .navbar-profile-button {
+    background: none;
+    margin-right: 0;
+  }
+
+  .navbar-profile-button img { 
+    width: 50px;
+    height: 50px;
+  }
+
+  .navbar-profile-button:hover {
+    background: none;
   }
 
   /* .profile-dropdown {
