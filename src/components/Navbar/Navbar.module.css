@@ -86,6 +86,8 @@
     background-color: white;
     padding: 1rem 1rem;
     font-family: raleway;
+    border: 1px solid #d5d5d5;
+    box-shadow: 0px 0px 16px -2px #d5d5d5;
   }
 
   .profile-dropdown hr {
