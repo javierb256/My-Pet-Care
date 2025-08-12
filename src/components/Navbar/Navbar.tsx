@@ -66,9 +66,9 @@ function Navbar() {
             </div>
             <hr></hr>
             <ul className={styles["dropdown-options"]}>
-              <li><img src={SimpleProfileIcon}/> Your Profile</li>
+              <li><img src={SimpleProfileIcon}/> My Profile</li>
               <li><img src={Gears}/> Settings</li>
-              <li><img src={SignOutIcon}/> Sign Out</li>
+              <li><Link to="/"><img src={SignOutIcon}/> Sign Out</Link></li>
             </ul>
           </div>
         

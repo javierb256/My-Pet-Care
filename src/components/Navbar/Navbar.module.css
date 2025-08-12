@@ -131,7 +131,15 @@
     width: 20px;
     height: 20px;
   }
+
+  .dropdown-options a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    gap: 12px;
+  }
 }
+
 
 @media screen and (max-width: 659px) {
   body {
