@@ -138,6 +138,10 @@
     display: flex;
     gap: 12px;
   }
+
+  .dropdown-options a:hover {
+    color: var(--blue-background);
+  }
 }
 
 
