@@ -57,7 +57,8 @@ function Navbar() {
           />
         </button>
         {profileDropDownActive ? 
-        <div className={styles["profile-dropdown"]}>
+        <div className={styles["profile-dropdown"]} onClick={()=> setProfileDropDownActive(false)}>
+          <div className={styles["profile-dropdown-content"]} onClick={(e)=> e.stopPropagation()}>
             <div className={styles["profile-dropdown-user"]}>
               <img src={ProfileIcon}/>
               <div>
@@ -70,6 +71,7 @@ function Navbar() {
               <li><img src={Gears}/> Settings</li>
               <li><Link to="/"><img src={SignOutIcon}/> Sign Out</Link></li>
             </ul>
+          </div>      
           </div>
         
          :
